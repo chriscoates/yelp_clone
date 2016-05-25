@@ -16,13 +16,11 @@ feature "User can sign in and out" do
 
   context "user signed in on the homepage" do
     before do
-      visit('/')
-      click_link('Sign up')
-      fill_in('Email', with: 'test@example.com')
-      fill_in('Password', with: 'testtest')
-      fill_in('Password confirmation', with: 'testtest')
-      click_button('Sign up')
+      sign_up_test
     end
+
+
+
 
     it "should see 'sign out' link" do
       visit('/')
@@ -33,6 +31,13 @@ feature "User can sign in and out" do
       visit('/')
       expect(page).not_to have_link('Sign in')
       expect(page).not_to have_link('Sign up')
+    end
+
+    it "should not allow a user to submit multiple reveiws to a restaurant" do
+      create_restaurant
+      leave_review
+      leave_review
+      expect(page).to have_content("has reviewed this restaurant already")
     end
   end
 end

@@ -854,3 +854,376 @@ DEPRECATION WARNING: [Devise] user_omniauth_authorize_path(:facebook) is depreca
 Please use user_facebook_omniauth_authorize_path instead.
  (called from _app_views_layouts_application_html_erb___793635463810505224_70285035274900 at /Users/admin/Dropbox/projects/main_course/Week_7/yelp_clone/yelp_clone/app/views/layouts/application.html.erb:14)
 Completed 200 OK in 36ms (Views: 34.6ms | ActiveRecord: 0.0ms)
+  [1m[36m (2.9ms)[0m  [1mCREATE TABLE "schema_migrations" ("version" character varying NOT NULL) [0m
+  [1m[35m (1.2ms)[0m  CREATE UNIQUE INDEX  "unique_schema_migrations" ON "schema_migrations"  ("version")
+  [1m[36mActiveRecord::SchemaMigration Load (0.3ms)[0m  [1mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+Migrating to CreateRestaurants (20160524090748)
+  [1m[35m (0.2ms)[0m  BEGIN
+DEPRECATION WARNING: `#timestamps` was called without specifying an option for `null`. In Rails 5, this behavior will change to `null: false`. You should manually specify `null: true` to prevent the behavior of your existing migrations from changing. (called from block in change at /Users/admin/Dropbox/projects/main_course/Week_7/yelp_clone/db/migrate/20160524090748_create_restaurants.rb:7)
+  [1m[36m (3.1ms)[0m  [1mCREATE TABLE "restaurants" ("id" serial primary key, "name" character varying, "rating" integer, "created_at" timestamp, "updated_at" timestamp) [0m
+  [1m[35mSQL (0.3ms)[0m  INSERT INTO "schema_migrations" ("version") VALUES ($1)  [["version", "20160524090748"]]
+  [1m[36m (0.6ms)[0m  [1mCOMMIT[0m
+Migrating to AddDescriptionToRestaurants (20160524115122)
+  [1m[35m (0.3ms)[0m  BEGIN
+  [1m[36m (0.3ms)[0m  [1mALTER TABLE "restaurants" ADD "description" text[0m
+  [1m[35mSQL (0.2ms)[0m  INSERT INTO "schema_migrations" ("version") VALUES ($1)  [["version", "20160524115122"]]
+  [1m[36m (0.5ms)[0m  [1mCOMMIT[0m
+Migrating to CreateReviews (20160524143540)
+  [1m[35m (0.1ms)[0m  BEGIN
+  [1m[36m (2.5ms)[0m  [1mCREATE TABLE "reviews" ("id" serial primary key, "thoughts" text, "rating" integer, "created_at" timestamp NOT NULL, "updated_at" timestamp NOT NULL) [0m
+  [1m[35mSQL (0.2ms)[0m  INSERT INTO "schema_migrations" ("version") VALUES ($1)  [["version", "20160524143540"]]
+  [1m[36m (0.5ms)[0m  [1mCOMMIT[0m
+Migrating to AddRestaurantRefToReviews (20160524144622)
+  [1m[35m (0.2ms)[0m  BEGIN
+  [1m[36m (0.3ms)[0m  [1mALTER TABLE "reviews" ADD "restaurant_id" integer[0m
+  [1m[35m (0.9ms)[0m  CREATE  INDEX  "index_reviews_on_restaurant_id" ON "reviews"  ("restaurant_id")
+  [1m[36m (1.3ms)[0m  [1mALTER TABLE "reviews" ADD CONSTRAINT "fk_rails_8173017a90"
+FOREIGN KEY ("restaurant_id")
+  REFERENCES "restaurants" ("id")
+[0m
+  [1m[35mSQL (0.2ms)[0m  INSERT INTO "schema_migrations" ("version") VALUES ($1)  [["version", "20160524144622"]]
+  [1m[36m (0.5ms)[0m  [1mCOMMIT[0m
+Migrating to DeviseCreateUsers (20160525100021)
+  [1m[35m (0.2ms)[0m  BEGIN
+  [1m[36m (2.9ms)[0m  [1mCREATE TABLE "users" ("id" serial primary key, "email" character varying DEFAULT '' NOT NULL, "encrypted_password" character varying DEFAULT '' NOT NULL, "reset_password_token" character varying, "reset_password_sent_at" timestamp, "remember_created_at" timestamp, "sign_in_count" integer DEFAULT 0 NOT NULL, "current_sign_in_at" timestamp, "last_sign_in_at" timestamp, "current_sign_in_ip" inet, "last_sign_in_ip" inet, "created_at" timestamp NOT NULL, "updated_at" timestamp NOT NULL) [0m
+  [1m[35m (1.1ms)[0m  CREATE UNIQUE INDEX  "index_users_on_email" ON "users"  ("email")
+  [1m[36m (1.1ms)[0m  [1mCREATE UNIQUE INDEX  "index_users_on_reset_password_token" ON "users"  ("reset_password_token")[0m
+  [1m[35mSQL (0.2ms)[0m  INSERT INTO "schema_migrations" ("version") VALUES ($1)  [["version", "20160525100021"]]
+  [1m[36m (0.6ms)[0m  [1mCOMMIT[0m
+Migrating to AddOmniauthToUsers (20160525151647)
+  [1m[35m (0.2ms)[0m  BEGIN
+  [1m[36m (0.3ms)[0m  [1mALTER TABLE "users" ADD "provider" character varying[0m
+  [1m[35m (0.2ms)[0m  ALTER TABLE "users" ADD "uid" character varying
+  [1m[36mSQL (0.2ms)[0m  [1mINSERT INTO "schema_migrations" ("version") VALUES ($1)[0m  [["version", "20160525151647"]]
+  [1m[35m (0.4ms)[0m  COMMIT
+  [1m[36mActiveRecord::SchemaMigration Load (0.2ms)[0m  [1mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+  [1m[35m (3.7ms)[0m  SELECT t2.oid::regclass::text AS to_table, a1.attname AS column, a2.attname AS primary_key, c.conname AS name, c.confupdtype AS on_update, c.confdeltype AS on_delete
+FROM pg_constraint c
+JOIN pg_class t1 ON c.conrelid = t1.oid
+JOIN pg_class t2 ON c.confrelid = t2.oid
+JOIN pg_attribute a1 ON a1.attnum = c.conkey[1] AND a1.attrelid = t1.oid
+JOIN pg_attribute a2 ON a2.attnum = c.confkey[1] AND a2.attrelid = t2.oid
+JOIN pg_namespace t3 ON c.connamespace = t3.oid
+WHERE c.contype = 'f'
+  AND t1.relname = 'restaurants'
+  AND t3.nspname = ANY (current_schemas(false))
+ORDER BY c.conname
+
+  [1m[36m (4.3ms)[0m  [1mSELECT t2.oid::regclass::text AS to_table, a1.attname AS column, a2.attname AS primary_key, c.conname AS name, c.confupdtype AS on_update, c.confdeltype AS on_delete
+FROM pg_constraint c
+JOIN pg_class t1 ON c.conrelid = t1.oid
+JOIN pg_class t2 ON c.confrelid = t2.oid
+JOIN pg_attribute a1 ON a1.attnum = c.conkey[1] AND a1.attrelid = t1.oid
+JOIN pg_attribute a2 ON a2.attnum = c.confkey[1] AND a2.attrelid = t2.oid
+JOIN pg_namespace t3 ON c.connamespace = t3.oid
+WHERE c.contype = 'f'
+  AND t1.relname = 'reviews'
+  AND t3.nspname = ANY (current_schemas(false))
+ORDER BY c.conname
+[0m
+  [1m[35m (4.7ms)[0m  SELECT t2.oid::regclass::text AS to_table, a1.attname AS column, a2.attname AS primary_key, c.conname AS name, c.confupdtype AS on_update, c.confdeltype AS on_delete
+FROM pg_constraint c
+JOIN pg_class t1 ON c.conrelid = t1.oid
+JOIN pg_class t2 ON c.confrelid = t2.oid
+JOIN pg_attribute a1 ON a1.attnum = c.conkey[1] AND a1.attrelid = t1.oid
+JOIN pg_attribute a2 ON a2.attnum = c.confkey[1] AND a2.attrelid = t2.oid
+JOIN pg_namespace t3 ON c.connamespace = t3.oid
+WHERE c.contype = 'f'
+  AND t1.relname = 'users'
+  AND t3.nspname = ANY (current_schemas(false))
+ORDER BY c.conname
+
+
+
+Started GET "/" for ::1 at 2016-05-25 22:40:40 +0100
+  [1m[36mActiveRecord::SchemaMigration Load (0.4ms)[0m  [1mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+Processing by RestaurantsController#index as HTML
+  [1m[35m (0.3ms)[0m  SELECT COUNT(*) FROM "restaurants"
+  Rendered restaurants/index.html.erb within layouts/application (4.5ms)
+DEPRECATION WARNING: [Devise] user_omniauth_authorize_path(:facebook) is deprecated and it will be removed from Devise 4.2.
+
+Please use user_facebook_omniauth_authorize_path instead.
+ (called from _app_views_layouts_application_html_erb__2666032375690411428_70270014555640 at /Users/admin/Dropbox/projects/main_course/Week_7/yelp_clone/app/views/layouts/application.html.erb:14)
+Completed 200 OK in 285ms (Views: 268.9ms | ActiveRecord: 1.1ms)
+
+
+Started GET "/users/auth/facebook" for ::1 at 2016-05-25 22:40:43 +0100
+
+
+Started GET "/users/auth/facebook" for ::1 at 2016-05-25 22:40:43 +0100
+
+
+Started GET "/users/auth/facebook" for ::1 at 2016-05-25 22:41:15 +0100
+  [1m[36mActiveRecord::SchemaMigration Load (0.4ms)[0m  [1mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+
+
+Started GET "/users/auth/facebook" for ::1 at 2016-05-25 22:41:15 +0100
+
+
+Started GET "/" for ::1 at 2016-05-25 22:41:17 +0100
+Processing by RestaurantsController#index as HTML
+  [1m[35m (0.3ms)[0m  SELECT COUNT(*) FROM "restaurants"
+  Rendered restaurants/index.html.erb within layouts/application (5.6ms)
+DEPRECATION WARNING: [Devise] user_omniauth_authorize_path(:facebook) is deprecated and it will be removed from Devise 4.2.
+
+Please use user_facebook_omniauth_authorize_path instead.
+ (called from _app_views_layouts_application_html_erb___3680669479075263805_70162313841220 at /Users/admin/Dropbox/projects/main_course/Week_7/yelp_clone/app/views/layouts/application.html.erb:14)
+Completed 200 OK in 298ms (Views: 291.9ms | ActiveRecord: 1.1ms)
+
+
+Started GET "/assets/restaurants.self-e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855.css?body=1" for ::1 at 2016-05-25 22:41:17 +0100
+
+
+Started GET "/assets/jquery_ujs.self-e87806d0cf4489aeb1bb7288016024e8de67fd18db693fe026fe3907581e53cd.js?body=1" for ::1 at 2016-05-25 22:41:17 +0100
+
+
+Started GET "/assets/reviews.self-e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855.css?body=1" for ::1 at 2016-05-25 22:41:17 +0100
+
+
+Started GET "/assets/application.self-e80e8f2318043e8af94dddc2adad5a4f09739a8ebb323b3ab31cd71d45fd9113.css?body=1" for ::1 at 2016-05-25 22:41:17 +0100
+
+
+Started GET "/assets/turbolinks.self-c37727e9bd6b2735da5c311aa83fead54ed0be6cc8bd9a65309e9c5abe2cbfff.js?body=1" for ::1 at 2016-05-25 22:41:17 +0100
+
+
+Started GET "/assets/jquery.self-660adc51e0224b731d29f575a6f1ec167ba08ad06ed5deca4f1e8654c135bf4c.js?body=1" for ::1 at 2016-05-25 22:41:17 +0100
+
+
+Started GET "/assets/reviews.self-877aef30ae1b040ab8a3aba4e3e309a11d7f2612f44dde450b5c157aa5f95c05.js?body=1" for ::1 at 2016-05-25 22:41:17 +0100
+
+
+Started GET "/assets/restaurants.self-877aef30ae1b040ab8a3aba4e3e309a11d7f2612f44dde450b5c157aa5f95c05.js?body=1" for ::1 at 2016-05-25 22:41:17 +0100
+
+
+Started GET "/assets/application.self-3b8dabdc891efe46b9a144b400ad69e37d7e5876bdc39dee783419a69d7ca819.js?body=1" for ::1 at 2016-05-25 22:41:17 +0100
+
+
+Started GET "/users/auth/facebook" for ::1 at 2016-05-25 22:41:18 +0100
+
+
+Started GET "/users/auth/facebook" for ::1 at 2016-05-25 22:41:18 +0100
+
+
+Started GET "/users/sign_up" for ::1 at 2016-05-25 22:41:41 +0100
+  [1m[36mActiveRecord::SchemaMigration Load (0.4ms)[0m  [1mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+Processing by Devise::RegistrationsController#new as HTML
+  Rendered devise/shared/_links.html.erb (1.1ms)
+  Rendered devise/registrations/new.html.erb within layouts/application (30.9ms)
+DEPRECATION WARNING: [Devise] user_omniauth_authorize_path(:facebook) is deprecated and it will be removed from Devise 4.2.
+
+Please use user_facebook_omniauth_authorize_path instead.
+ (called from _app_views_layouts_application_html_erb__2908839139394674225_70347534746220 at /Users/admin/Dropbox/projects/main_course/Week_7/yelp_clone/app/views/layouts/application.html.erb:14)
+Completed 200 OK in 317ms (Views: 293.3ms | ActiveRecord: 2.6ms)
+
+
+Started GET "/users/auth/facebook" for ::1 at 2016-05-25 22:41:47 +0100
+
+
+Started GET "/users/auth/facebook" for ::1 at 2016-05-25 22:41:47 +0100
+
+
+Started GET "/users/auth/facebook" for ::1 at 2016-05-25 22:41:50 +0100
+
+
+Started GET "/users/auth/facebook" for ::1 at 2016-05-25 22:41:50 +0100
+
+
+Started GET "/users/sign_up" for ::1 at 2016-05-25 22:41:53 +0100
+Processing by Devise::RegistrationsController#new as HTML
+  Rendered devise/shared/_links.html.erb (0.4ms)
+  Rendered devise/registrations/new.html.erb within layouts/application (3.5ms)
+DEPRECATION WARNING: [Devise] user_omniauth_authorize_path(:facebook) is deprecated and it will be removed from Devise 4.2.
+
+Please use user_facebook_omniauth_authorize_path instead.
+ (called from _app_views_layouts_application_html_erb__2908839139394674225_70347534746220 at /Users/admin/Dropbox/projects/main_course/Week_7/yelp_clone/app/views/layouts/application.html.erb:14)
+Completed 200 OK in 29ms (Views: 28.5ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/users/sign_in" for ::1 at 2016-05-25 22:41:56 +0100
+Processing by Devise::SessionsController#new as HTML
+  Rendered devise/shared/_links.html.erb (1.2ms)
+  Rendered devise/sessions/new.html.erb within layouts/application (22.4ms)
+DEPRECATION WARNING: [Devise] user_omniauth_authorize_path(:facebook) is deprecated and it will be removed from Devise 4.2.
+
+Please use user_facebook_omniauth_authorize_path instead.
+ (called from _app_views_layouts_application_html_erb__2908839139394674225_70347534746220 at /Users/admin/Dropbox/projects/main_course/Week_7/yelp_clone/app/views/layouts/application.html.erb:14)
+Completed 200 OK in 72ms (Views: 69.2ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/users/sign_up" for ::1 at 2016-05-25 22:41:57 +0100
+Processing by Devise::RegistrationsController#new as HTML
+  Rendered devise/shared/_links.html.erb (0.9ms)
+  Rendered devise/registrations/new.html.erb within layouts/application (5.5ms)
+DEPRECATION WARNING: [Devise] user_omniauth_authorize_path(:facebook) is deprecated and it will be removed from Devise 4.2.
+
+Please use user_facebook_omniauth_authorize_path instead.
+ (called from _app_views_layouts_application_html_erb__2908839139394674225_70347534746220 at /Users/admin/Dropbox/projects/main_course/Week_7/yelp_clone/app/views/layouts/application.html.erb:14)
+Completed 200 OK in 39ms (Views: 38.6ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/" for ::1 at 2016-05-25 22:42:02 +0100
+Processing by RestaurantsController#index as HTML
+  [1m[35m (0.3ms)[0m  SELECT COUNT(*) FROM "restaurants"
+  Rendered restaurants/index.html.erb within layouts/application (3.4ms)
+DEPRECATION WARNING: [Devise] user_omniauth_authorize_path(:facebook) is deprecated and it will be removed from Devise 4.2.
+
+Please use user_facebook_omniauth_authorize_path instead.
+ (called from _app_views_layouts_application_html_erb__2908839139394674225_70347534746220 at /Users/admin/Dropbox/projects/main_course/Week_7/yelp_clone/app/views/layouts/application.html.erb:14)
+Completed 200 OK in 32ms (Views: 25.2ms | ActiveRecord: 1.0ms)
+
+
+Started GET "/restaurants/new" for ::1 at 2016-05-25 22:42:03 +0100
+Processing by RestaurantsController#new as HTML
+  Rendered restaurants/new.html.erb within layouts/application (2.2ms)
+DEPRECATION WARNING: [Devise] user_omniauth_authorize_path(:facebook) is deprecated and it will be removed from Devise 4.2.
+
+Please use user_facebook_omniauth_authorize_path instead.
+ (called from _app_views_layouts_application_html_erb__2908839139394674225_70347534746220 at /Users/admin/Dropbox/projects/main_course/Week_7/yelp_clone/app/views/layouts/application.html.erb:14)
+Completed 200 OK in 25ms (Views: 20.6ms | ActiveRecord: 0.5ms)
+
+
+Started POST "/restaurants" for ::1 at 2016-05-25 22:42:13 +0100
+Processing by RestaurantsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"i01p7IAiGpLgrpFrXqrYzwVikY9xcMIJGqTuDvIvAFgYMe5UDByJMyFYTRBKJ9h1qslUlgTEtWe18H/+iK6zmw==", "restaurant"=>{"name"=>"KFC", "description"=>"Tastey!"}, "commit"=>"Create Restaurant"}
+  [1m[36m (0.2ms)[0m  [1mBEGIN[0m
+  [1m[35mRestaurant Exists (0.6ms)[0m  SELECT  1 AS one FROM "restaurants" WHERE "restaurants"."name" = 'KFC' LIMIT 1
+  [1m[36mSQL (0.4ms)[0m  [1mINSERT INTO "restaurants" ("name", "description", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "id"[0m  [["name", "KFC"], ["description", "Tastey!"], ["created_at", "2016-05-25 21:42:13.881903"], ["updated_at", "2016-05-25 21:42:13.881903"]]
+  [1m[35m (0.5ms)[0m  COMMIT
+Redirected to http://localhost:3000/restaurants
+Completed 302 Found in 15ms (ActiveRecord: 1.8ms)
+
+
+Started GET "/restaurants" for ::1 at 2016-05-25 22:42:13 +0100
+Processing by RestaurantsController#index as HTML
+  [1m[36m (0.3ms)[0m  [1mSELECT COUNT(*) FROM "restaurants"[0m
+  [1m[35mRestaurant Load (0.2ms)[0m  SELECT "restaurants".* FROM "restaurants"
+  [1m[36mReview Load (0.3ms)[0m  [1mSELECT "reviews".* FROM "reviews" WHERE "reviews"."restaurant_id" = $1[0m  [["restaurant_id", 1]]
+  Rendered restaurants/index.html.erb within layouts/application (18.6ms)
+DEPRECATION WARNING: [Devise] user_omniauth_authorize_path(:facebook) is deprecated and it will be removed from Devise 4.2.
+
+Please use user_facebook_omniauth_authorize_path instead.
+ (called from _app_views_layouts_application_html_erb__2908839139394674225_70347534746220 at /Users/admin/Dropbox/projects/main_course/Week_7/yelp_clone/app/views/layouts/application.html.erb:14)
+Completed 200 OK in 40ms (Views: 38.0ms | ActiveRecord: 1.5ms)
+
+
+Started DELETE "/restaurants/1" for ::1 at 2016-05-25 22:42:16 +0100
+Processing by RestaurantsController#destroy as HTML
+  Parameters: {"authenticity_token"=>"3LeUUBORHtdoPUudd3VF85AByDBfUK6vG4OT5RLJoX9PyxPon6+NdqnLl+Zj+EVJP6oNKSrk2cG01wIVaEgSvA==", "id"=>"1"}
+  [1m[35mRestaurant Load (0.4ms)[0m  SELECT  "restaurants".* FROM "restaurants" WHERE "restaurants"."id" = $1 LIMIT 1  [["id", 1]]
+  [1m[36m (0.1ms)[0m  [1mBEGIN[0m
+  [1m[35mReview Load (0.3ms)[0m  SELECT "reviews".* FROM "reviews" WHERE "reviews"."restaurant_id" = $1  [["restaurant_id", 1]]
+  [1m[36mSQL (0.5ms)[0m  [1mDELETE FROM "restaurants" WHERE "restaurants"."id" = $1[0m  [["id", 1]]
+  [1m[35m (0.5ms)[0m  COMMIT
+Redirected to http://localhost:3000/restaurants
+Completed 302 Found in 9ms (ActiveRecord: 1.8ms)
+
+
+Started GET "/restaurants" for ::1 at 2016-05-25 22:42:16 +0100
+Processing by RestaurantsController#index as HTML
+  [1m[36m (0.3ms)[0m  [1mSELECT COUNT(*) FROM "restaurants"[0m
+  Rendered restaurants/index.html.erb within layouts/application (1.0ms)
+DEPRECATION WARNING: [Devise] user_omniauth_authorize_path(:facebook) is deprecated and it will be removed from Devise 4.2.
+
+Please use user_facebook_omniauth_authorize_path instead.
+ (called from _app_views_layouts_application_html_erb__2908839139394674225_70347534746220 at /Users/admin/Dropbox/projects/main_course/Week_7/yelp_clone/app/views/layouts/application.html.erb:14)
+Completed 200 OK in 22ms (Views: 20.6ms | ActiveRecord: 0.3ms)
+
+
+Started GET "/restaurants/new" for ::1 at 2016-05-25 22:42:17 +0100
+Processing by RestaurantsController#new as HTML
+  Rendered restaurants/new.html.erb within layouts/application (1.5ms)
+DEPRECATION WARNING: [Devise] user_omniauth_authorize_path(:facebook) is deprecated and it will be removed from Devise 4.2.
+
+Please use user_facebook_omniauth_authorize_path instead.
+ (called from _app_views_layouts_application_html_erb__2908839139394674225_70347534746220 at /Users/admin/Dropbox/projects/main_course/Week_7/yelp_clone/app/views/layouts/application.html.erb:14)
+Completed 200 OK in 19ms (Views: 18.9ms | ActiveRecord: 0.0ms)
+
+
+Started POST "/restaurants" for ::1 at 2016-05-25 22:42:24 +0100
+Processing by RestaurantsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"7JG0UGQW/SQFsw8hvAmYRapUnQEIyeIHVNQpOY2cJLd/7TPo6ChuhcRF01qohJj/Bf9YGH19lWn7gLjJ9x2XdA==", "restaurant"=>{"name"=>"KFC", "description"=>"Tastey!"}, "commit"=>"Create Restaurant"}
+  [1m[35m (0.1ms)[0m  BEGIN
+  [1m[36mRestaurant Exists (0.3ms)[0m  [1mSELECT  1 AS one FROM "restaurants" WHERE "restaurants"."name" = 'KFC' LIMIT 1[0m
+  [1m[35mSQL (0.3ms)[0m  INSERT INTO "restaurants" ("name", "description", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "id"  [["name", "KFC"], ["description", "Tastey!"], ["created_at", "2016-05-25 21:42:24.523369"], ["updated_at", "2016-05-25 21:42:24.523369"]]
+  [1m[36m (15.6ms)[0m  [1mCOMMIT[0m
+Redirected to http://localhost:3000/restaurants
+Completed 302 Found in 20ms (ActiveRecord: 16.3ms)
+
+
+Started GET "/restaurants" for ::1 at 2016-05-25 22:42:24 +0100
+Processing by RestaurantsController#index as HTML
+  [1m[35m (0.3ms)[0m  SELECT COUNT(*) FROM "restaurants"
+  [1m[36mRestaurant Load (0.2ms)[0m  [1mSELECT "restaurants".* FROM "restaurants"[0m
+  [1m[35mReview Load (0.2ms)[0m  SELECT "reviews".* FROM "reviews" WHERE "reviews"."restaurant_id" = $1  [["restaurant_id", 2]]
+  Rendered restaurants/index.html.erb within layouts/application (2.7ms)
+DEPRECATION WARNING: [Devise] user_omniauth_authorize_path(:facebook) is deprecated and it will be removed from Devise 4.2.
+
+Please use user_facebook_omniauth_authorize_path instead.
+ (called from _app_views_layouts_application_html_erb__2908839139394674225_70347534746220 at /Users/admin/Dropbox/projects/main_course/Week_7/yelp_clone/app/views/layouts/application.html.erb:14)
+Completed 200 OK in 25ms (Views: 23.5ms | ActiveRecord: 0.7ms)
+
+
+Started GET "/restaurants/2/reviews/new" for ::1 at 2016-05-25 22:42:30 +0100
+Processing by ReviewsController#new as HTML
+  Parameters: {"restaurant_id"=>"2"}
+  [1m[36mRestaurant Load (0.3ms)[0m  [1mSELECT  "restaurants".* FROM "restaurants" WHERE "restaurants"."id" = $1 LIMIT 1[0m  [["id", 2]]
+  Rendered reviews/new.html.erb within layouts/application (3.6ms)
+DEPRECATION WARNING: [Devise] user_omniauth_authorize_path(:facebook) is deprecated and it will be removed from Devise 4.2.
+
+Please use user_facebook_omniauth_authorize_path instead.
+ (called from _app_views_layouts_application_html_erb__2908839139394674225_70347534746220 at /Users/admin/Dropbox/projects/main_course/Week_7/yelp_clone/app/views/layouts/application.html.erb:14)
+Completed 200 OK in 32ms (Views: 26.8ms | ActiveRecord: 0.8ms)
+
+
+Started POST "/restaurants/2/reviews" for ::1 at 2016-05-25 22:42:39 +0100
+Processing by ReviewsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"UkdHipgSzoMWqo8EK1CYiuMgLsneB8qo4XJG+O76JurBO8AyFCxdItdcU38/3ZgwTIvr0KuzvcZOJtcIlHuVKQ==", "review"=>{"thoughts"=>"Hmmm... not so tastey", "rating"=>"1"}, "commit"=>"Leave Review", "restaurant_id"=>"2"}
+  [1m[35mRestaurant Load (0.3ms)[0m  SELECT  "restaurants".* FROM "restaurants" WHERE "restaurants"."id" = $1 LIMIT 1  [["id", 2]]
+  [1m[36m (0.2ms)[0m  [1mBEGIN[0m
+  [1m[35mSQL (0.7ms)[0m  INSERT INTO "reviews" ("thoughts", "rating", "restaurant_id", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5) RETURNING "id"  [["thoughts", "Hmmm... not so tastey"], ["rating", 1], ["restaurant_id", 2], ["created_at", "2016-05-25 21:42:39.591868"], ["updated_at", "2016-05-25 21:42:39.591868"]]
+  [1m[36m (0.5ms)[0m  [1mCOMMIT[0m
+Redirected to http://localhost:3000/restaurants
+Completed 302 Found in 9ms (ActiveRecord: 1.7ms)
+
+
+Started GET "/restaurants" for ::1 at 2016-05-25 22:42:39 +0100
+Processing by RestaurantsController#index as HTML
+  [1m[35m (0.3ms)[0m  SELECT COUNT(*) FROM "restaurants"
+  [1m[36mRestaurant Load (0.2ms)[0m  [1mSELECT "restaurants".* FROM "restaurants"[0m
+  [1m[35mReview Load (0.2ms)[0m  SELECT "reviews".* FROM "reviews" WHERE "reviews"."restaurant_id" = $1  [["restaurant_id", 2]]
+  Rendered restaurants/index.html.erb within layouts/application (3.2ms)
+DEPRECATION WARNING: [Devise] user_omniauth_authorize_path(:facebook) is deprecated and it will be removed from Devise 4.2.
+
+Please use user_facebook_omniauth_authorize_path instead.
+ (called from _app_views_layouts_application_html_erb__2908839139394674225_70347534746220 at /Users/admin/Dropbox/projects/main_course/Week_7/yelp_clone/app/views/layouts/application.html.erb:14)
+Completed 200 OK in 32ms (Views: 30.4ms | ActiveRecord: 0.8ms)
+
+
+Started DELETE "/restaurants/2" for ::1 at 2016-05-25 22:42:42 +0100
+Processing by RestaurantsController#destroy as HTML
+  Parameters: {"authenticity_token"=>"R28+s05o4Jy9R4M4MNiwymNjEgeVl1lg/QhDQ0nFuejUE7kLwlZzPXyxX0MkVbBwzMjXHuAjLg5SXNKzM0QKKw==", "id"=>"2"}
+  [1m[36mRestaurant Load (0.3ms)[0m  [1mSELECT  "restaurants".* FROM "restaurants" WHERE "restaurants"."id" = $1 LIMIT 1[0m  [["id", 2]]
+  [1m[35m (0.1ms)[0m  BEGIN
+  [1m[36mReview Load (0.3ms)[0m  [1mSELECT "reviews".* FROM "reviews" WHERE "reviews"."restaurant_id" = $1[0m  [["restaurant_id", 2]]
+  [1m[35mSQL (0.2ms)[0m  DELETE FROM "reviews" WHERE "reviews"."id" = $1  [["id", 1]]
+  [1m[36mSQL (0.3ms)[0m  [1mDELETE FROM "restaurants" WHERE "restaurants"."id" = $1[0m  [["id", 2]]
+  [1m[35m (0.5ms)[0m  COMMIT
+Redirected to http://localhost:3000/restaurants
+Completed 302 Found in 7ms (ActiveRecord: 1.7ms)
+
+
+Started GET "/restaurants" for ::1 at 2016-05-25 22:42:42 +0100
+Processing by RestaurantsController#index as HTML
+  [1m[36m (0.3ms)[0m  [1mSELECT COUNT(*) FROM "restaurants"[0m
+  Rendered restaurants/index.html.erb within layouts/application (0.9ms)
+DEPRECATION WARNING: [Devise] user_omniauth_authorize_path(:facebook) is deprecated and it will be removed from Devise 4.2.
+
+Please use user_facebook_omniauth_authorize_path instead.
+ (called from _app_views_layouts_application_html_erb__2908839139394674225_70347534746220 at /Users/admin/Dropbox/projects/main_course/Week_7/yelp_clone/app/views/layouts/application.html.erb:14)
+Completed 200 OK in 21ms (Views: 19.8ms | ActiveRecord: 0.3ms)
+
+
+Started GET "/users/auth/facebook" for ::1 at 2016-05-25 22:42:45 +0100
+
+
+Started GET "/users/auth/facebook" for ::1 at 2016-05-25 22:42:45 +0100

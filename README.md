@@ -1,1 +1,0 @@
-# yelp-weekchallenge-rails

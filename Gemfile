@@ -37,7 +37,7 @@ group :development, :test do
   gem 'byebug'
   gem 'rspec-rails'
   gem 'capybara'
-  gem 'spec-collection_matchers'
+  gem 'rspec-collection_matchers'
 end
 
 group :development do

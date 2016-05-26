@@ -17,5 +17,6 @@ class User < ActiveRecord::Base
   end
 
   has_many :reviews
+  has_many :restaurants
   has_many :reviewed_restaurants, through: :reviews, source: :restaurant
 end

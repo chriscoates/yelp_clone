@@ -1227,3 +1227,1013 @@ Started GET "/users/auth/facebook" for ::1 at 2016-05-25 22:42:45 +0100
 
 
 Started GET "/users/auth/facebook" for ::1 at 2016-05-25 22:42:45 +0100
+
+
+Started GET "/" for ::1 at 2016-05-26 09:31:22 +0100
+  [1m[36mActiveRecord::SchemaMigration Load (29.8ms)[0m  [1mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+Processing by RestaurantsController#index as HTML
+  [1m[35m (43.8ms)[0m  SELECT COUNT(*) FROM "restaurants"
+  Rendered restaurants/index.html.erb within layouts/application (119.9ms)
+DEPRECATION WARNING: [Devise] user_omniauth_authorize_path(:facebook) is deprecated and it will be removed from Devise 4.2.
+
+Please use user_facebook_omniauth_authorize_path instead.
+ (called from _app_views_layouts_application_html_erb___644395261577646623_70221239750640 at /Users/admin/Dropbox/projects/main_course/Week_7/yelp_clone/app/views/layouts/application.html.erb:14)
+Completed 200 OK in 687ms (Views: 556.5ms | ActiveRecord: 115.4ms)
+
+
+Started GET "/users/auth/facebook" for ::1 at 2016-05-26 09:31:26 +0100
+
+
+Started GET "/users/auth/facebook" for ::1 at 2016-05-26 09:31:26 +0100
+
+
+Started GET "/users/auth/facebook/callback?code=AQAIlvheFkFM-ceRNxkIJz2-CIvGO8H-eECthd5MPgdDr6ln8xbDR3bZPiC0p0JbVa-s9UDLGPrA2Ie4Axb23OVhgREmV505ZVkcNHjlgoVrZG6btT1mKhkQK1xdLHz1akKRKLt5we0oA__FNAW02g32kQIu2X5ErUJQCt-UcdZD5bazHDHfo6hjvxA3w7NJWCirPMeHbgYlcJb12Nz9FdZveQ3LMgewRvxL18BbZ6o879NpthZM650EdzgwCpW5rIIw9EuQBW3atZR8p9yIPOUJlGMhfZO2S_6CoxXu_TvsAtRV0IU9_ZDkbEh7iJB9mqLDWYdl8V0K1tPi9OKhNTG5&state=9b0a10c3e22807c02c1904a76a4e8906aaa93211bc72856f" for ::1 at 2016-05-26 09:31:27 +0100
+Processing by Users::OmniauthCallbacksController#facebook as HTML
+  Parameters: {"code"=>"AQAIlvheFkFM-ceRNxkIJz2-CIvGO8H-eECthd5MPgdDr6ln8xbDR3bZPiC0p0JbVa-s9UDLGPrA2Ie4Axb23OVhgREmV505ZVkcNHjlgoVrZG6btT1mKhkQK1xdLHz1akKRKLt5we0oA__FNAW02g32kQIu2X5ErUJQCt-UcdZD5bazHDHfo6hjvxA3w7NJWCirPMeHbgYlcJb12Nz9FdZveQ3LMgewRvxL18BbZ6o879NpthZM650EdzgwCpW5rIIw9EuQBW3atZR8p9yIPOUJlGMhfZO2S_6CoxXu_TvsAtRV0IU9_ZDkbEh7iJB9mqLDWYdl8V0K1tPi9OKhNTG5", "state"=>"9b0a10c3e22807c02c1904a76a4e8906aaa93211bc72856f"}
+  [1m[36mUser Load (8.6ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."provider" = $1 AND "users"."uid" = $2  ORDER BY "users"."id" ASC LIMIT 1[0m  [["provider", "facebook"], ["uid", "10209163457420800"]]
+  [1m[35m (0.2ms)[0m  BEGIN
+  [1m[36m (0.2ms)[0m  [1mROLLBACK[0m
+Redirected to http://localhost:3000/users/sign_up
+Completed 302 Found in 300ms (ActiveRecord: 76.6ms)
+
+
+Started GET "/users/sign_up" for ::1 at 2016-05-26 09:31:28 +0100
+Processing by Devise::RegistrationsController#new as HTML
+  Rendered devise/shared/_links.html.erb (1.6ms)
+  Rendered devise/registrations/new.html.erb within layouts/application (32.2ms)
+DEPRECATION WARNING: [Devise] user_omniauth_authorize_path(:facebook) is deprecated and it will be removed from Devise 4.2.
+
+Please use user_facebook_omniauth_authorize_path instead.
+ (called from _app_views_layouts_application_html_erb___644395261577646623_70221239750640 at /Users/admin/Dropbox/projects/main_course/Week_7/yelp_clone/app/views/layouts/application.html.erb:14)
+Completed 200 OK in 70ms (Views: 67.8ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/users/auth/facebook" for ::1 at 2016-05-26 09:31:41 +0100
+
+
+Started GET "/users/auth/facebook" for ::1 at 2016-05-26 09:31:41 +0100
+
+
+Started GET "/users/auth/facebook/callback?code=AQApCJ6cZ7Cah3xp74oF42oqCX4swYnF_dAoq2-LP8KtHHzS_H4PpdJGpt7Ls-YvUaqpjQre6xnZMH4ukKA9J0NfdEJ0VsqLfnRUmMjnKKwLLLsWu3p1qA7wcQmi17pNof8aC-zOx7cG6mgTKAri1aKSstLSu12sB579gvp8HFyqdc1m7rxjNUh03avfyOi8_RVdW8DWi7U4hCoo_chDWIhb9x3YAAql6a6IgQ6t4VqllW9DymSxFIuL12UcIMfc-bdHv2uivtjB6e7mAr2MeNL5qhiBGTCumQHbAiHlsTjXDigESHjWflr2perYPW_jhtyxjULYw4tnxPEwOC1uDo5-&state=6cf09b16b4ee373666cbd39626894e776476d04973a238ca" for ::1 at 2016-05-26 09:31:41 +0100
+Processing by Users::OmniauthCallbacksController#facebook as HTML
+  Parameters: {"code"=>"AQApCJ6cZ7Cah3xp74oF42oqCX4swYnF_dAoq2-LP8KtHHzS_H4PpdJGpt7Ls-YvUaqpjQre6xnZMH4ukKA9J0NfdEJ0VsqLfnRUmMjnKKwLLLsWu3p1qA7wcQmi17pNof8aC-zOx7cG6mgTKAri1aKSstLSu12sB579gvp8HFyqdc1m7rxjNUh03avfyOi8_RVdW8DWi7U4hCoo_chDWIhb9x3YAAql6a6IgQ6t4VqllW9DymSxFIuL12UcIMfc-bdHv2uivtjB6e7mAr2MeNL5qhiBGTCumQHbAiHlsTjXDigESHjWflr2perYPW_jhtyxjULYw4tnxPEwOC1uDo5-", "state"=>"6cf09b16b4ee373666cbd39626894e776476d04973a238ca"}
+  [1m[35mUser Load (0.5ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."provider" = $1 AND "users"."uid" = $2  ORDER BY "users"."id" ASC LIMIT 1  [["provider", "facebook"], ["uid", "10209163457420800"]]
+  [1m[36m (0.2ms)[0m  [1mBEGIN[0m
+  [1m[35m (0.2ms)[0m  ROLLBACK
+Redirected to http://localhost:3000/users/sign_up
+Completed 302 Found in 151ms (ActiveRecord: 0.8ms)
+
+
+Started GET "/users/sign_up" for ::1 at 2016-05-26 09:31:41 +0100
+Processing by Devise::RegistrationsController#new as HTML
+  Rendered devise/shared/_links.html.erb (0.3ms)
+  Rendered devise/registrations/new.html.erb within layouts/application (3.5ms)
+DEPRECATION WARNING: [Devise] user_omniauth_authorize_path(:facebook) is deprecated and it will be removed from Devise 4.2.
+
+Please use user_facebook_omniauth_authorize_path instead.
+ (called from _app_views_layouts_application_html_erb___644395261577646623_70221239750640 at /Users/admin/Dropbox/projects/main_course/Week_7/yelp_clone/app/views/layouts/application.html.erb:14)
+Completed 200 OK in 25ms (Views: 24.2ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/users/auth/facebook" for ::1 at 2016-05-26 09:31:51 +0100
+
+
+Started GET "/users/auth/facebook" for ::1 at 2016-05-26 09:31:51 +0100
+
+
+Started GET "/users/auth/facebook/callback?code=AQCRH5zMILq8A5c_MZ0hYQUkcFrlaClBaIOiy1hcs1utEdggc8LEEW3IHc_5-wmlNZOdkXwKM4Ei-elcqZzuK1B6NzqWijbxvl3M7feBa0RYQDa8g6JJsTkO65tuejm_f0sD7-2mk4NKa-vibfrf24CQVyzmTI-ONFmu-ix8domNoiqGyD6WFJsCDRAl_aRs-9b4EPyvZZ3R0aifLs27yv2cLazJRBE8IRBYZrg_6BoquFbR55VMCdqLyGVKoRPypYbb2dxVQ5ZMTl3jUAkb2CzxFi7q85v-jLeHZIoIdFMjOPNR1eG7LB-Y2oUmwZ4dfI1SrQtXv6K4XUj_lYlOlAuG&state=f858e8c9eecd2cdb8453c5b9ce0298108fdd885a58f8b6bb" for ::1 at 2016-05-26 09:31:51 +0100
+Processing by Users::OmniauthCallbacksController#facebook as HTML
+  Parameters: {"code"=>"AQCRH5zMILq8A5c_MZ0hYQUkcFrlaClBaIOiy1hcs1utEdggc8LEEW3IHc_5-wmlNZOdkXwKM4Ei-elcqZzuK1B6NzqWijbxvl3M7feBa0RYQDa8g6JJsTkO65tuejm_f0sD7-2mk4NKa-vibfrf24CQVyzmTI-ONFmu-ix8domNoiqGyD6WFJsCDRAl_aRs-9b4EPyvZZ3R0aifLs27yv2cLazJRBE8IRBYZrg_6BoquFbR55VMCdqLyGVKoRPypYbb2dxVQ5ZMTl3jUAkb2CzxFi7q85v-jLeHZIoIdFMjOPNR1eG7LB-Y2oUmwZ4dfI1SrQtXv6K4XUj_lYlOlAuG", "state"=>"f858e8c9eecd2cdb8453c5b9ce0298108fdd885a58f8b6bb"}
+  [1m[36mUser Load (0.4ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."provider" = $1 AND "users"."uid" = $2  ORDER BY "users"."id" ASC LIMIT 1[0m  [["provider", "facebook"], ["uid", "10209163457420800"]]
+  [1m[35m (0.2ms)[0m  BEGIN
+  [1m[36m (0.1ms)[0m  [1mROLLBACK[0m
+Redirected to http://localhost:3000/users/sign_up
+Completed 302 Found in 152ms (ActiveRecord: 0.7ms)
+
+
+Started GET "/users/sign_up" for ::1 at 2016-05-26 09:31:52 +0100
+Processing by Devise::RegistrationsController#new as HTML
+  Rendered devise/shared/_links.html.erb (0.3ms)
+  Rendered devise/registrations/new.html.erb within layouts/application (2.9ms)
+DEPRECATION WARNING: [Devise] user_omniauth_authorize_path(:facebook) is deprecated and it will be removed from Devise 4.2.
+
+Please use user_facebook_omniauth_authorize_path instead.
+ (called from _app_views_layouts_application_html_erb___644395261577646623_70221239750640 at /Users/admin/Dropbox/projects/main_course/Week_7/yelp_clone/app/views/layouts/application.html.erb:14)
+Completed 200 OK in 22ms (Views: 20.8ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/" for ::1 at 2016-05-26 11:19:28 +0100
+  [1m[36mActiveRecord::SchemaMigration Load (0.5ms)[0m  [1mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+Processing by RestaurantsController#index as HTML
+  [1m[35m (0.4ms)[0m  SELECT COUNT(*) FROM "restaurants"
+  Rendered restaurants/index.html.erb within layouts/application (7.9ms)
+Completed 200 OK in 438ms (Views: 420.0ms | ActiveRecord: 1.2ms)
+
+
+Started GET "/users/auth/facebook.facebook" for ::1 at 2016-05-26 11:19:33 +0100
+Processing by Users::OmniauthCallbacksController#passthru as 
+  Rendered text template (0.0ms)
+Completed 404 Not Found in 48ms (Views: 45.3ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/users/sign_up" for ::1 at 2016-05-26 11:19:45 +0100
+Processing by Devise::RegistrationsController#new as HTML
+  Rendered devise/shared/_links.html.erb (2.0ms)
+  Rendered devise/registrations/new.html.erb within layouts/application (59.5ms)
+Completed 200 OK in 137ms (Views: 113.6ms | ActiveRecord: 6.6ms)
+
+
+Started GET "/users/auth/facebook" for ::1 at 2016-05-26 11:19:46 +0100
+
+
+Started GET "/users/auth/facebook" for ::1 at 2016-05-26 11:19:46 +0100
+
+
+Started GET "/users/auth/facebook/callback?code=AQCxfuWnWJb_D95xbhSd3ZFqD4gK833YS15_Yo9p0y5of6g2DNhOzJUt-hKeEdyK0_3JpePFrSdLoIheCyFxyqEWrfVnaKFuO7zgA-tlpUIes1W4oQoZUKHnm5zgTmBggDLNs6M4UXBCcBIX5730w3mCNLhSR4XT4WTzJWYXXU2Xw3ExB0_aKfKQVFcpOrQvUaYts-cY5rYDDtSHjU_sKeOhaN2DJkDjMgsAggnmEoVtomomkY4ELdLRicRt7BkLmkKzQUYMeUyqyw4F4hZR-CmvckuGw9j8Onxcw3cV6gSV7EJrYoqlN-KWZ0iwiXQPbbqBnA4fynBSq3JVrXJw0Qnk&state=51e40764822d9983e5d0948f95352c8b21745e791ab49171" for ::1 at 2016-05-26 11:19:47 +0100
+Processing by Users::OmniauthCallbacksController#facebook as HTML
+  Parameters: {"code"=>"AQCxfuWnWJb_D95xbhSd3ZFqD4gK833YS15_Yo9p0y5of6g2DNhOzJUt-hKeEdyK0_3JpePFrSdLoIheCyFxyqEWrfVnaKFuO7zgA-tlpUIes1W4oQoZUKHnm5zgTmBggDLNs6M4UXBCcBIX5730w3mCNLhSR4XT4WTzJWYXXU2Xw3ExB0_aKfKQVFcpOrQvUaYts-cY5rYDDtSHjU_sKeOhaN2DJkDjMgsAggnmEoVtomomkY4ELdLRicRt7BkLmkKzQUYMeUyqyw4F4hZR-CmvckuGw9j8Onxcw3cV6gSV7EJrYoqlN-KWZ0iwiXQPbbqBnA4fynBSq3JVrXJw0Qnk", "state"=>"51e40764822d9983e5d0948f95352c8b21745e791ab49171"}
+  [1m[36mUser Load (0.7ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."provider" = $1 AND "users"."uid" = $2  ORDER BY "users"."id" ASC LIMIT 1[0m  [["provider", "facebook"], ["uid", "10209163457420800"]]
+  [1m[35m (0.1ms)[0m  BEGIN
+  [1m[36m (0.3ms)[0m  [1mROLLBACK[0m
+Redirected to http://localhost:3000/users/sign_up
+Completed 302 Found in 271ms (ActiveRecord: 1.4ms)
+
+
+Started GET "/users/sign_up" for ::1 at 2016-05-26 11:19:47 +0100
+Processing by Devise::RegistrationsController#new as HTML
+  Rendered devise/shared/_links.html.erb (0.5ms)
+  Rendered devise/registrations/new.html.erb within layouts/application (5.7ms)
+Completed 200 OK in 118ms (Views: 111.6ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/users/auth/facebook" for ::1 at 2016-05-26 11:19:50 +0100
+
+
+Started GET "/users/auth/facebook" for ::1 at 2016-05-26 11:19:50 +0100
+
+
+Started GET "/users/auth/facebook/callback?code=AQCKESbZRG9fDgdf5u4yF_vnGDaDlFz76BHF3OY6isT8eWCWNVLR5zcreSIgJyNrSmdjUGFESN6asfdphkB5DMiuVBk-i6CSdAdpSkooDdLnQY9E2zWUTqebINbwpFOK4jpYTMzFYOwHGrmSsSVlHzXNzlXCzvhWXKwsu-JuExLi0EDG0dBeJdyKb9TzQLKM5md3lc2VVQ0i8duNqpQvZcXHfYi7XpylnOWlA1bHNsLpyB8ri2oi8jawjp_z2DHFVLtwK9tJCZ5PTDthJvGDYxojkoJgqzjOM_pqWOwnueq4Y45s4Nhnj0JtA9U_6z6865n7j-XAauZDBxh9Qr89bBX5&state=41e44cb6a3cf1c192317173b6ff7457ed67958f03f1e5f96" for ::1 at 2016-05-26 11:19:50 +0100
+Processing by Users::OmniauthCallbacksController#facebook as HTML
+  Parameters: {"code"=>"AQCKESbZRG9fDgdf5u4yF_vnGDaDlFz76BHF3OY6isT8eWCWNVLR5zcreSIgJyNrSmdjUGFESN6asfdphkB5DMiuVBk-i6CSdAdpSkooDdLnQY9E2zWUTqebINbwpFOK4jpYTMzFYOwHGrmSsSVlHzXNzlXCzvhWXKwsu-JuExLi0EDG0dBeJdyKb9TzQLKM5md3lc2VVQ0i8duNqpQvZcXHfYi7XpylnOWlA1bHNsLpyB8ri2oi8jawjp_z2DHFVLtwK9tJCZ5PTDthJvGDYxojkoJgqzjOM_pqWOwnueq4Y45s4Nhnj0JtA9U_6z6865n7j-XAauZDBxh9Qr89bBX5", "state"=>"41e44cb6a3cf1c192317173b6ff7457ed67958f03f1e5f96"}
+  [1m[35mUser Load (0.4ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."provider" = $1 AND "users"."uid" = $2  ORDER BY "users"."id" ASC LIMIT 1  [["provider", "facebook"], ["uid", "10209163457420800"]]
+  [1m[36m (2.3ms)[0m  [1mBEGIN[0m
+  [1m[35m (0.2ms)[0m  ROLLBACK
+Redirected to http://localhost:3000/users/sign_up
+Completed 302 Found in 174ms (ActiveRecord: 2.9ms)
+
+
+Started GET "/users/sign_up" for ::1 at 2016-05-26 11:19:50 +0100
+Processing by Devise::RegistrationsController#new as HTML
+  Rendered devise/shared/_links.html.erb (0.5ms)
+  Rendered devise/registrations/new.html.erb within layouts/application (3.5ms)
+Completed 200 OK in 32ms (Views: 30.7ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/users/auth/facebook.facebook" for ::1 at 2016-05-26 11:19:55 +0100
+Processing by Users::OmniauthCallbacksController#passthru as 
+  Rendered text template (0.0ms)
+Completed 404 Not Found in 1ms (Views: 0.3ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/users/auth/facebook" for ::1 at 2016-05-26 11:20:03 +0100
+
+
+Started GET "/users/auth/facebook/callback?code=AQDxiMqW_feXi7aZ8_D70t7apQcSLmdesMuXiIVqH5TsUnQg0Bh9Q_DlBp9hnEm8CUbck-A1xIP05g5B_-8474HUPGxJYHbXECyEqA1b1UUMLsKhWC3OSRQxgaF0Xh6XfGM0FOoLHyvlul9KGVSIXmZyUqECo-SoOQWr1JAYkky153OrNOP50cmptbbGPwtqfDvMMX4L5k2Nehbv3spJ-yFi-do9myjUsBqO2YqahzSvJie6CAvNfX_0_TPXnfPoLIfS-XzXvftSLXkinYN23NB2TPufY1iGTS_TXp_FPYqkB7hUWYnwKLbfNKAU2XDDKUhikmrrLkU8l9L7QoSFWmb6&state=1f1299505cdc2104ff4d9d56c876673a609c3ebf8b1c4720" for ::1 at 2016-05-26 11:20:04 +0100
+Processing by Users::OmniauthCallbacksController#facebook as HTML
+  Parameters: {"code"=>"AQDxiMqW_feXi7aZ8_D70t7apQcSLmdesMuXiIVqH5TsUnQg0Bh9Q_DlBp9hnEm8CUbck-A1xIP05g5B_-8474HUPGxJYHbXECyEqA1b1UUMLsKhWC3OSRQxgaF0Xh6XfGM0FOoLHyvlul9KGVSIXmZyUqECo-SoOQWr1JAYkky153OrNOP50cmptbbGPwtqfDvMMX4L5k2Nehbv3spJ-yFi-do9myjUsBqO2YqahzSvJie6CAvNfX_0_TPXnfPoLIfS-XzXvftSLXkinYN23NB2TPufY1iGTS_TXp_FPYqkB7hUWYnwKLbfNKAU2XDDKUhikmrrLkU8l9L7QoSFWmb6", "state"=>"1f1299505cdc2104ff4d9d56c876673a609c3ebf8b1c4720"}
+  [1m[36mUser Load (0.3ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."provider" = $1 AND "users"."uid" = $2  ORDER BY "users"."id" ASC LIMIT 1[0m  [["provider", "facebook"], ["uid", "10209163457420800"]]
+  [1m[35m (0.1ms)[0m  BEGIN
+  [1m[36m (0.2ms)[0m  [1mROLLBACK[0m
+Redirected to http://localhost:3000/users/sign_up
+Completed 302 Found in 198ms (ActiveRecord: 0.7ms)
+
+
+Started GET "/users/sign_up" for ::1 at 2016-05-26 11:20:04 +0100
+Processing by Devise::RegistrationsController#new as HTML
+  Rendered devise/shared/_links.html.erb (0.5ms)
+  Rendered devise/registrations/new.html.erb within layouts/application (4.2ms)
+Completed 200 OK in 47ms (Views: 46.5ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/" for ::1 at 2016-05-26 11:20:53 +0100
+  [1m[36mActiveRecord::SchemaMigration Load (0.4ms)[0m  [1mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+Processing by RestaurantsController#index as HTML
+  [1m[35m (0.4ms)[0m  SELECT COUNT(*) FROM "restaurants"
+  Rendered restaurants/index.html.erb within layouts/application (6.3ms)
+Completed 200 OK in 432ms (Views: 410.6ms | ActiveRecord: 2.4ms)
+
+
+Started GET "/users/auth/facebook" for ::1 at 2016-05-26 11:20:55 +0100
+
+
+Started GET "/users/auth/facebook" for ::1 at 2016-05-26 11:20:58 +0100
+
+
+Started GET "/users/auth/facebook" for ::1 at 2016-05-26 11:20:58 +0100
+
+
+Started GET "/users/auth/facebook/callback?code=AQCRY5VkvUoscuehN18lBaye4tqCEbkHRojTUqsaXje3XGmeO9E0UoK3aXJud8uvYO2CVipKfevj4hnSSn0gg39MpAW-NsJV1c7Nrr57w2mzIriy4FdKVg_Kv-KioYkVaohAq6TVcdizKdUF4tOgv6mzK6fZtfGxLlmHGWjEeJAyAryJpeZkBa4Quz4ePbiG5t-U2A4pfA_lZjRIHsLwx9FF-wS-i96X1iS9ETfrzaG5wW3nQ0289sS79wA21tGoTRD23E1w9Ev1s7uOOpQm6uqczB9YEMcBOdu6paj4Q6J7EAwoLRVLoEU97hMGGMU6kCdiwSkCLIGEvUEqd3dUR5Pk&state=a57c691f9b668c4b3d5ee9370a521911d310ebbc215e6195" for ::1 at 2016-05-26 11:20:58 +0100
+Processing by Users::OmniauthCallbacksController#facebook as HTML
+  Parameters: {"code"=>"AQCRY5VkvUoscuehN18lBaye4tqCEbkHRojTUqsaXje3XGmeO9E0UoK3aXJud8uvYO2CVipKfevj4hnSSn0gg39MpAW-NsJV1c7Nrr57w2mzIriy4FdKVg_Kv-KioYkVaohAq6TVcdizKdUF4tOgv6mzK6fZtfGxLlmHGWjEeJAyAryJpeZkBa4Quz4ePbiG5t-U2A4pfA_lZjRIHsLwx9FF-wS-i96X1iS9ETfrzaG5wW3nQ0289sS79wA21tGoTRD23E1w9Ev1s7uOOpQm6uqczB9YEMcBOdu6paj4Q6J7EAwoLRVLoEU97hMGGMU6kCdiwSkCLIGEvUEqd3dUR5Pk", "state"=>"a57c691f9b668c4b3d5ee9370a521911d310ebbc215e6195"}
+  [1m[36mUser Load (0.5ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."provider" = $1 AND "users"."uid" = $2  ORDER BY "users"."id" ASC LIMIT 1[0m  [["provider", "facebook"], ["uid", "10209163457420800"]]
+  [1m[35m (0.2ms)[0m  BEGIN
+  [1m[36m (0.4ms)[0m  [1mROLLBACK[0m
+Redirected to http://localhost:3000/users/sign_up
+Completed 302 Found in 298ms (ActiveRecord: 3.9ms)
+
+
+Started GET "/users/sign_up" for ::1 at 2016-05-26 11:21:00 +0100
+Processing by Devise::RegistrationsController#new as HTML
+  Rendered devise/shared/_links.html.erb (2.7ms)
+  Rendered devise/registrations/new.html.erb within layouts/application (59.4ms)
+Completed 200 OK in 175ms (Views: 161.6ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/" for ::1 at 2016-05-26 11:21:34 +0100
+Processing by RestaurantsController#index as HTML
+  [1m[35m (0.4ms)[0m  SELECT COUNT(*) FROM "restaurants"
+  Rendered restaurants/index.html.erb within layouts/application (1.4ms)
+Completed 200 OK in 32ms (Views: 31.4ms | ActiveRecord: 0.4ms)
+
+
+Started GET "/assets/restaurants.self-e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855.css?body=1" for ::1 at 2016-05-26 11:21:34 +0100
+
+
+Started GET "/assets/reviews.self-e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855.css?body=1" for ::1 at 2016-05-26 11:21:34 +0100
+
+
+Started GET "/assets/turbolinks.self-c37727e9bd6b2735da5c311aa83fead54ed0be6cc8bd9a65309e9c5abe2cbfff.js?body=1" for ::1 at 2016-05-26 11:21:34 +0100
+
+
+Started GET "/assets/restaurants.self-877aef30ae1b040ab8a3aba4e3e309a11d7f2612f44dde450b5c157aa5f95c05.js?body=1" for ::1 at 2016-05-26 11:21:34 +0100
+
+
+Started GET "/assets/jquery_ujs.self-e87806d0cf4489aeb1bb7288016024e8de67fd18db693fe026fe3907581e53cd.js?body=1" for ::1 at 2016-05-26 11:21:34 +0100
+
+
+Started GET "/assets/reviews.self-877aef30ae1b040ab8a3aba4e3e309a11d7f2612f44dde450b5c157aa5f95c05.js?body=1" for ::1 at 2016-05-26 11:21:34 +0100
+
+
+Started GET "/assets/jquery.self-660adc51e0224b731d29f575a6f1ec167ba08ad06ed5deca4f1e8654c135bf4c.js?body=1" for ::1 at 2016-05-26 11:21:34 +0100
+
+
+Started GET "/assets/application.self-e80e8f2318043e8af94dddc2adad5a4f09739a8ebb323b3ab31cd71d45fd9113.css?body=1" for ::1 at 2016-05-26 11:21:34 +0100
+
+
+Started GET "/assets/application.self-3b8dabdc891efe46b9a144b400ad69e37d7e5876bdc39dee783419a69d7ca819.js?body=1" for ::1 at 2016-05-26 11:21:34 +0100
+
+
+Started GET "/users/auth/facebook" for ::1 at 2016-05-26 11:21:35 +0100
+
+
+Started GET "/users/auth/facebook" for ::1 at 2016-05-26 11:21:36 +0100
+
+
+Started GET "/users/auth/facebook/callback?code=AQCYRSxIXtANcXocKgw_CprlXbpghxZncQyj7fy2SPLT5XO1-9nUcCxzG-MN3JttR2JpP6k_YkkBVs_wj3-57wF0cCwlAowjeS1-dUU_-Q81udb7EqNeOIsJw3IRZwZkQO4zUDwlCGnKkIYZ9HLV8vBCf_b0FMEWh-eVGu2FDaOUGJ7dz1YsSX3N24culPzwdQUEC0Rtzx_Tu-2J_ZLIn_S1QCegMAHqfoSmvMi7iZOlr34M7ysBubW4cVmp0xXoIR9x3bnWSG63HWjh4MZFGkMQWNHT4GOetMYgqUwdNtXEnYmTYoe7HFjHovCMJ78zXsU&state=2b6457052bdd83c4e0ca56ae0673581d7aaf2ba706a1e605" for ::1 at 2016-05-26 11:22:19 +0100
+Processing by Users::OmniauthCallbacksController#facebook as HTML
+  Parameters: {"code"=>"AQCYRSxIXtANcXocKgw_CprlXbpghxZncQyj7fy2SPLT5XO1-9nUcCxzG-MN3JttR2JpP6k_YkkBVs_wj3-57wF0cCwlAowjeS1-dUU_-Q81udb7EqNeOIsJw3IRZwZkQO4zUDwlCGnKkIYZ9HLV8vBCf_b0FMEWh-eVGu2FDaOUGJ7dz1YsSX3N24culPzwdQUEC0Rtzx_Tu-2J_ZLIn_S1QCegMAHqfoSmvMi7iZOlr34M7ysBubW4cVmp0xXoIR9x3bnWSG63HWjh4MZFGkMQWNHT4GOetMYgqUwdNtXEnYmTYoe7HFjHovCMJ78zXsU", "state"=>"2b6457052bdd83c4e0ca56ae0673581d7aaf2ba706a1e605"}
+  [1m[36mUser Load (0.3ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."provider" = $1 AND "users"."uid" = $2  ORDER BY "users"."id" ASC LIMIT 1[0m  [["provider", "facebook"], ["uid", "10209163457420800"]]
+  [1m[35m (0.2ms)[0m  BEGIN
+  [1m[36m (0.2ms)[0m  [1mROLLBACK[0m
+Redirected to http://localhost:3000/users/sign_up
+Completed 302 Found in 169ms (ActiveRecord: 0.7ms)
+
+
+Started GET "/users/sign_up" for ::1 at 2016-05-26 11:22:19 +0100
+Processing by Devise::RegistrationsController#new as HTML
+  Rendered devise/shared/_links.html.erb (0.4ms)
+  Rendered devise/registrations/new.html.erb within layouts/application (8.2ms)
+Completed 200 OK in 89ms (Views: 87.5ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/" for ::1 at 2016-05-26 11:29:34 +0100
+  [1m[36mActiveRecord::SchemaMigration Load (0.6ms)[0m  [1mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+Processing by RestaurantsController#index as HTML
+  [1m[35m (0.4ms)[0m  SELECT COUNT(*) FROM "restaurants"
+  Rendered restaurants/index.html.erb within layouts/application (4.7ms)
+Completed 200 OK in 440ms (Views: 412.3ms | ActiveRecord: 1.2ms)
+
+
+Started GET "/users/auth/facebook" for ::1 at 2016-05-26 11:29:36 +0100
+
+
+Started GET "/users/auth/facebook" for ::1 at 2016-05-26 11:29:36 +0100
+
+
+Started GET "/" for ::1 at 2016-05-26 11:30:08 +0100
+  [1m[36mActiveRecord::SchemaMigration Load (0.4ms)[0m  [1mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+Processing by RestaurantsController#index as HTML
+  [1m[35m (0.6ms)[0m  SELECT COUNT(*) FROM "restaurants"
+  Rendered restaurants/index.html.erb within layouts/application (6.5ms)
+Completed 200 OK in 423ms (Views: 404.9ms | ActiveRecord: 1.5ms)
+
+
+Started GET "/users/auth/facebook" for ::1 at 2016-05-26 11:30:09 +0100
+
+
+Started GET "/users/auth/facebook" for ::1 at 2016-05-26 11:30:09 +0100
+
+
+Started GET "/users/auth/facebook/callback?code=AQAPae9F2_HGxBWV4QVRFJbjfnfXfpYhExF51fr9Qzx-8i1gAVxe7HkFsgQ5LZRU7NGvfmKdzoTK0WuU-7i8hWdIfsIpRlu-vsaMP-r_ieUyaA1D819yTrHPuYTd0aKdI4VQsbuIemuSjW2Tm7wkvYACcMeNg5Qis8niO2OUR69Vyn_B-RHzFPclsSKne1-sRC-7tuKAuZeGakdXpQZ-m0TSJQ_xyNw2wEx7IFuh0zhs1EfbrNXAwgOH-kgu922YosSjOEty40UO52XwFZDZNom8Wq93n7Bc_kfaIpvJnoA5nHnwDWDrTDhykHzGa05MJrA&state=c60f151d939218d4ec5c0ce81949770a8cecc6dc50d6e7df" for ::1 at 2016-05-26 11:30:10 +0100
+Processing by Users::OmniauthCallbacksController#failure as HTML
+  Parameters: {"code"=>"AQAPae9F2_HGxBWV4QVRFJbjfnfXfpYhExF51fr9Qzx-8i1gAVxe7HkFsgQ5LZRU7NGvfmKdzoTK0WuU-7i8hWdIfsIpRlu-vsaMP-r_ieUyaA1D819yTrHPuYTd0aKdI4VQsbuIemuSjW2Tm7wkvYACcMeNg5Qis8niO2OUR69Vyn_B-RHzFPclsSKne1-sRC-7tuKAuZeGakdXpQZ-m0TSJQ_xyNw2wEx7IFuh0zhs1EfbrNXAwgOH-kgu922YosSjOEty40UO52XwFZDZNom8Wq93n7Bc_kfaIpvJnoA5nHnwDWDrTDhykHzGa05MJrA", "state"=>"c60f151d939218d4ec5c0ce81949770a8cecc6dc50d6e7df"}
+Redirected to http://localhost:3000/
+Completed 302 Found in 1ms (ActiveRecord: 0.0ms)
+
+
+Started GET "/" for ::1 at 2016-05-26 11:30:10 +0100
+Processing by RestaurantsController#index as HTML
+  [1m[36m (0.3ms)[0m  [1mSELECT COUNT(*) FROM "restaurants"[0m
+  Rendered restaurants/index.html.erb within layouts/application (1.0ms)
+Completed 200 OK in 59ms (Views: 57.0ms | ActiveRecord: 0.3ms)
+
+
+Started GET "/users/auth/facebook" for ::1 at 2016-05-26 11:30:16 +0100
+
+
+Started GET "/users/auth/facebook" for ::1 at 2016-05-26 11:30:16 +0100
+
+
+Started GET "/users/auth/facebook/callback?code=AQD3i9x1rLYZjlzegP2xAfqS04PZDrFm2svWaYnjBbaJlmsDIRwbamtCngO4Ny1NGdUGfVWoZX7vJjH8CvseqNhqMRiyGmsy3zwfXesQTqWwypjmz2Pb1VThx3Vz-oJk6IddGRip7lqxJFc0O6k4s3Cc-PxsPZBI8Gm7707EKnKvUL1MSUhpR-bwKUOtaHxtQh918Yu4u45ZAs35zYOmXI1vZMWe97TABt8K5oleqTzZ6R3R0Vz72i_QK_Vzl4R8ICihwza9GENqhNtDnXHBHfcqjIQ__FpeZ-m7NB6bli5o39uCk2MKfw7_l6s-2vICxP0&state=7e057643fadd8e1ddf4779fa67b07bdb59f126087eb88446" for ::1 at 2016-05-26 11:30:16 +0100
+Processing by Users::OmniauthCallbacksController#failure as HTML
+  Parameters: {"code"=>"AQD3i9x1rLYZjlzegP2xAfqS04PZDrFm2svWaYnjBbaJlmsDIRwbamtCngO4Ny1NGdUGfVWoZX7vJjH8CvseqNhqMRiyGmsy3zwfXesQTqWwypjmz2Pb1VThx3Vz-oJk6IddGRip7lqxJFc0O6k4s3Cc-PxsPZBI8Gm7707EKnKvUL1MSUhpR-bwKUOtaHxtQh918Yu4u45ZAs35zYOmXI1vZMWe97TABt8K5oleqTzZ6R3R0Vz72i_QK_Vzl4R8ICihwza9GENqhNtDnXHBHfcqjIQ__FpeZ-m7NB6bli5o39uCk2MKfw7_l6s-2vICxP0", "state"=>"7e057643fadd8e1ddf4779fa67b07bdb59f126087eb88446"}
+Redirected to http://localhost:3000/
+Completed 302 Found in 1ms (ActiveRecord: 0.0ms)
+
+
+Started GET "/" for ::1 at 2016-05-26 11:30:16 +0100
+Processing by RestaurantsController#index as HTML
+  [1m[35m (0.3ms)[0m  SELECT COUNT(*) FROM "restaurants"
+  Rendered restaurants/index.html.erb within layouts/application (0.9ms)
+Completed 200 OK in 50ms (Views: 49.4ms | ActiveRecord: 0.3ms)
+
+
+Started GET "/restaurants/new" for ::1 at 2016-05-26 11:30:18 +0100
+Processing by RestaurantsController#new as HTML
+  Rendered restaurants/new.html.erb within layouts/application (30.3ms)
+Completed 200 OK in 70ms (Views: 62.0ms | ActiveRecord: 1.8ms)
+
+
+Started GET "/users/auth/facebook" for ::1 at 2016-05-26 11:30:20 +0100
+
+
+Started GET "/users/auth/facebook" for ::1 at 2016-05-26 11:30:20 +0100
+
+
+Started GET "/users/auth/facebook/callback?code=AQDJjFYF9hyCjNXqmAqz53Jt7EB-BY6_xrysE5LeN99Us4g_acHzYLViYDnERNFpNg9znLhrDhkbc7l0Ou2OAdsRK1QYizIFGsqroKrwDCUu3mouFIe5fURNuc3kAEi7oxdnZrj7iWx4Wck54sEr9x41ES5Xp7pxDueYdHDmj5yRXV3zGo3xRc-VZEvTbvcOCBQEaq-_B2rIhgQLBPGDTiyXTb0s9SYB8RHXeWilzyGKeqEloI3s8DJbRaz1flPtpxqiKR8FZQf4Ow-x7HIOXbHjuFlOE4WfA3Fk6sByU4ZKdvTijHEWzq3R-YvfN4Ku-Qg&state=42722e9a29df975369a73396eeea06d5acac8cea774f12ea" for ::1 at 2016-05-26 11:30:20 +0100
+Processing by Users::OmniauthCallbacksController#failure as HTML
+  Parameters: {"code"=>"AQDJjFYF9hyCjNXqmAqz53Jt7EB-BY6_xrysE5LeN99Us4g_acHzYLViYDnERNFpNg9znLhrDhkbc7l0Ou2OAdsRK1QYizIFGsqroKrwDCUu3mouFIe5fURNuc3kAEi7oxdnZrj7iWx4Wck54sEr9x41ES5Xp7pxDueYdHDmj5yRXV3zGo3xRc-VZEvTbvcOCBQEaq-_B2rIhgQLBPGDTiyXTb0s9SYB8RHXeWilzyGKeqEloI3s8DJbRaz1flPtpxqiKR8FZQf4Ow-x7HIOXbHjuFlOE4WfA3Fk6sByU4ZKdvTijHEWzq3R-YvfN4Ku-Qg", "state"=>"42722e9a29df975369a73396eeea06d5acac8cea774f12ea"}
+Redirected to http://localhost:3000/
+Completed 302 Found in 1ms (ActiveRecord: 0.0ms)
+
+
+Started GET "/" for ::1 at 2016-05-26 11:30:20 +0100
+Processing by RestaurantsController#index as HTML
+  [1m[36m (0.3ms)[0m  [1mSELECT COUNT(*) FROM "restaurants"[0m
+  Rendered restaurants/index.html.erb within layouts/application (1.1ms)
+Completed 200 OK in 37ms (Views: 35.4ms | ActiveRecord: 0.3ms)
+
+
+Started GET "/" for ::1 at 2016-05-26 11:30:27 +0100
+Processing by RestaurantsController#index as HTML
+  [1m[35m (0.4ms)[0m  SELECT COUNT(*) FROM "restaurants"
+  Rendered restaurants/index.html.erb within layouts/application (1.3ms)
+Completed 200 OK in 35ms (Views: 34.2ms | ActiveRecord: 0.4ms)
+
+
+Started GET "/assets/restaurants.self-e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855.css?body=1" for ::1 at 2016-05-26 11:30:27 +0100
+
+
+Started GET "/assets/jquery_ujs.self-e87806d0cf4489aeb1bb7288016024e8de67fd18db693fe026fe3907581e53cd.js?body=1" for ::1 at 2016-05-26 11:30:27 +0100
+
+
+Started GET "/assets/jquery.self-660adc51e0224b731d29f575a6f1ec167ba08ad06ed5deca4f1e8654c135bf4c.js?body=1" for ::1 at 2016-05-26 11:30:27 +0100
+
+
+Started GET "/assets/reviews.self-e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855.css?body=1" for ::1 at 2016-05-26 11:30:27 +0100
+
+
+Started GET "/assets/turbolinks.self-c37727e9bd6b2735da5c311aa83fead54ed0be6cc8bd9a65309e9c5abe2cbfff.js?body=1" for ::1 at 2016-05-26 11:30:27 +0100
+
+
+Started GET "/assets/application.self-e80e8f2318043e8af94dddc2adad5a4f09739a8ebb323b3ab31cd71d45fd9113.css?body=1" for ::1 at 2016-05-26 11:30:27 +0100
+
+
+Started GET "/assets/restaurants.self-877aef30ae1b040ab8a3aba4e3e309a11d7f2612f44dde450b5c157aa5f95c05.js?body=1" for ::1 at 2016-05-26 11:30:27 +0100
+
+
+Started GET "/assets/reviews.self-877aef30ae1b040ab8a3aba4e3e309a11d7f2612f44dde450b5c157aa5f95c05.js?body=1" for ::1 at 2016-05-26 11:30:27 +0100
+
+
+Started GET "/assets/application.self-3b8dabdc891efe46b9a144b400ad69e37d7e5876bdc39dee783419a69d7ca819.js?body=1" for ::1 at 2016-05-26 11:30:27 +0100
+
+
+Started GET "/users/auth/facebook" for ::1 at 2016-05-26 11:30:28 +0100
+
+
+Started GET "/users/auth/facebook" for ::1 at 2016-05-26 11:30:28 +0100
+
+
+Started GET "/users/auth/facebook/callback?code=AQBiDABnpwqkWzkXhxzo8CxKtzHIbG6qpHkxIzStzpgZYOCtvONrFbuPXm69MxJ3qEII37Jiz5RUet_8n1zRMM7lhd2MutcKbr1C_snnQT1T4Zj3bQMAx7SNIj0wEAQ9uI9D34poBOgkVQktZBm4J3_N3quBmTcWkJkJXSQ1A2CWr9JHW-ViUm6o9XPhPi8ofkJ1xIKCQBRTw7f3Oc9Vnnc3teGfkQPwTc265ifeGZFcG6LQ9CWqLx8bEpaZSqp_glDJu4Tmr85bAuVKyi0i6uUXgzgMTXgWPnDv4CD703qDw9MAn3kC7IfOm1Yxruv4Olw&state=2dd52da072b8d91acaaedf8bcf61f4eda184922a7a17d129" for ::1 at 2016-05-26 11:30:28 +0100
+Processing by Users::OmniauthCallbacksController#failure as HTML
+  Parameters: {"code"=>"AQBiDABnpwqkWzkXhxzo8CxKtzHIbG6qpHkxIzStzpgZYOCtvONrFbuPXm69MxJ3qEII37Jiz5RUet_8n1zRMM7lhd2MutcKbr1C_snnQT1T4Zj3bQMAx7SNIj0wEAQ9uI9D34poBOgkVQktZBm4J3_N3quBmTcWkJkJXSQ1A2CWr9JHW-ViUm6o9XPhPi8ofkJ1xIKCQBRTw7f3Oc9Vnnc3teGfkQPwTc265ifeGZFcG6LQ9CWqLx8bEpaZSqp_glDJu4Tmr85bAuVKyi0i6uUXgzgMTXgWPnDv4CD703qDw9MAn3kC7IfOm1Yxruv4Olw", "state"=>"2dd52da072b8d91acaaedf8bcf61f4eda184922a7a17d129"}
+Redirected to http://localhost:3000/
+Completed 302 Found in 1ms (ActiveRecord: 0.0ms)
+
+
+Started GET "/" for ::1 at 2016-05-26 11:30:28 +0100
+Processing by RestaurantsController#index as HTML
+  [1m[36m (0.3ms)[0m  [1mSELECT COUNT(*) FROM "restaurants"[0m
+  Rendered restaurants/index.html.erb within layouts/application (0.9ms)
+Completed 200 OK in 23ms (Views: 21.7ms | ActiveRecord: 0.3ms)
+
+
+Started GET "/" for ::1 at 2016-05-26 11:30:42 +0100
+  [1m[36mActiveRecord::SchemaMigration Load (0.4ms)[0m  [1mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+Processing by RestaurantsController#index as HTML
+  [1m[35m (0.4ms)[0m  SELECT COUNT(*) FROM "restaurants"
+  Rendered restaurants/index.html.erb within layouts/application (4.4ms)
+Completed 200 OK in 346ms (Views: 327.1ms | ActiveRecord: 1.3ms)
+
+
+Started GET "/users/auth/facebook" for ::1 at 2016-05-26 11:30:44 +0100
+
+
+Started GET "/users/auth/facebook" for ::1 at 2016-05-26 11:30:44 +0100
+
+
+Started GET "/users/auth/facebook/callback?code=AQAc4ueOECEzpxuPX1wVgb2lYgsgGBGkByXuu1bmJw3TaPjjrsgpcoJ0SnV9Q22xVAqLeroG34ZOw4SZKtQqYQ6QY6FYDLkgmUCHfPXlxNDWQaFJqf54gTXenwrX7Yv2MoGYGpvt2OIm4PKWWYkQS66VOWAnRR1b4Ax7xZjJbxVV7BiGQJaQEpo4kb_AQsj18GJVxd3-CutVFFMlg785IG06M2ujjUR1FbLXXZQW3G5OLRUXh4tEyfk1W3SPg6Ph73DaidGpWwgY_Thb9C4VtGMdwFN2H4JN5EbfEL-i3zcWo2LLbSk583YOqCW9cR0EJw8&state=7f5a945b44b5fd2c5125a61634b1625e2140d995baec90b3" for ::1 at 2016-05-26 11:30:44 +0100
+Processing by Users::OmniauthCallbacksController#failure as HTML
+  Parameters: {"code"=>"AQAc4ueOECEzpxuPX1wVgb2lYgsgGBGkByXuu1bmJw3TaPjjrsgpcoJ0SnV9Q22xVAqLeroG34ZOw4SZKtQqYQ6QY6FYDLkgmUCHfPXlxNDWQaFJqf54gTXenwrX7Yv2MoGYGpvt2OIm4PKWWYkQS66VOWAnRR1b4Ax7xZjJbxVV7BiGQJaQEpo4kb_AQsj18GJVxd3-CutVFFMlg785IG06M2ujjUR1FbLXXZQW3G5OLRUXh4tEyfk1W3SPg6Ph73DaidGpWwgY_Thb9C4VtGMdwFN2H4JN5EbfEL-i3zcWo2LLbSk583YOqCW9cR0EJw8", "state"=>"7f5a945b44b5fd2c5125a61634b1625e2140d995baec90b3"}
+Redirected to http://localhost:3000/
+Completed 302 Found in 1ms (ActiveRecord: 0.0ms)
+
+
+Started GET "/" for ::1 at 2016-05-26 11:30:44 +0100
+Processing by RestaurantsController#index as HTML
+  [1m[36m (0.4ms)[0m  [1mSELECT COUNT(*) FROM "restaurants"[0m
+  Rendered restaurants/index.html.erb within layouts/application (1.2ms)
+Completed 200 OK in 36ms (Views: 33.7ms | ActiveRecord: 0.4ms)
+
+
+Started GET "/" for ::1 at 2016-05-26 11:32:55 +0100
+  [1m[36mActiveRecord::SchemaMigration Load (0.4ms)[0m  [1mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+Processing by RestaurantsController#index as HTML
+  [1m[35m (0.5ms)[0m  SELECT COUNT(*) FROM "restaurants"
+  Rendered restaurants/index.html.erb within layouts/application (4.7ms)
+Completed 200 OK in 463ms (Views: 443.9ms | ActiveRecord: 1.3ms)
+
+
+Started GET "/users/auth/facebook" for ::1 at 2016-05-26 11:33:00 +0100
+
+
+Started GET "/users/auth/facebook" for ::1 at 2016-05-26 11:33:00 +0100
+
+
+Started GET "/users/auth/facebook/callback?code=AQAYfysEOo_MfjaytvKnbS5zJ8Gavj08A_8goZmj1PD9cmWT81EMtxotsUKtcx8hAilLEwctGeMeY7s5uVA_PYPQrjMhy49x1Ytr-ALzjJDyglFM56s_W_WtBhOVbcQX5tCkCxAZeQrm82budtFtXhqkH56ddoNOlXvYteCvAcp3mToyH2ddNkYRP25cX6a5rnNaUpj0yYGnt7wErjdwAgA1AYqSdw0Ov3N6AC4ufpAvrtwiOtWvgM6AIe4ek-uOiqrIAun-Jy6a4gQAfD_CPSCFYiphVfLkQttANktIM9r7Kvk2As1H8rQe_FqwYCzMcY8&state=7b8d9f83517b424d8ca1d685e2d11c6ab9a03bfba83d566c" for ::1 at 2016-05-26 11:33:01 +0100
+Processing by Users::OmniauthCallbacksController#failure as HTML
+  Parameters: {"code"=>"AQAYfysEOo_MfjaytvKnbS5zJ8Gavj08A_8goZmj1PD9cmWT81EMtxotsUKtcx8hAilLEwctGeMeY7s5uVA_PYPQrjMhy49x1Ytr-ALzjJDyglFM56s_W_WtBhOVbcQX5tCkCxAZeQrm82budtFtXhqkH56ddoNOlXvYteCvAcp3mToyH2ddNkYRP25cX6a5rnNaUpj0yYGnt7wErjdwAgA1AYqSdw0Ov3N6AC4ufpAvrtwiOtWvgM6AIe4ek-uOiqrIAun-Jy6a4gQAfD_CPSCFYiphVfLkQttANktIM9r7Kvk2As1H8rQe_FqwYCzMcY8", "state"=>"7b8d9f83517b424d8ca1d685e2d11c6ab9a03bfba83d566c"}
+Redirected to http://localhost:3000/
+Completed 302 Found in 1ms (ActiveRecord: 0.0ms)
+
+
+Started GET "/" for ::1 at 2016-05-26 11:33:01 +0100
+Processing by RestaurantsController#index as HTML
+  [1m[36m (0.3ms)[0m  [1mSELECT COUNT(*) FROM "restaurants"[0m
+  Rendered restaurants/index.html.erb within layouts/application (1.0ms)
+Completed 200 OK in 32ms (Views: 31.2ms | ActiveRecord: 0.3ms)
+
+
+Started GET "/users/sign_up" for ::1 at 2016-05-26 11:33:17 +0100
+Processing by Devise::RegistrationsController#new as HTML
+  Rendered devise/shared/_links.html.erb (2.9ms)
+  Rendered devise/registrations/new.html.erb within layouts/application (61.1ms)
+Completed 200 OK in 139ms (Views: 102.8ms | ActiveRecord: 3.6ms)
+
+
+Started GET "/users/auth/facebook" for ::1 at 2016-05-26 11:33:20 +0100
+
+
+Started GET "/users/auth/facebook" for ::1 at 2016-05-26 11:33:20 +0100
+
+
+Started GET "/users/auth/facebook/callback?code=AQBVBAA-byWd_qDVf7mtH7WtYSIZoj57o4-70o86IvEljjHRtpJ4wdS_SF_4-nWV683qSlw_-yzGeyTE6fVffNdInc1POJSUFsFEAEx2E_PbRjidyQzWJVQnrzrKCUjhvDWZL9ciTggJyvea1xfJXm1lTFlH6f4IjX6rD-yVz2M-h_S_xwLZ341aHF9zkoenxzgIuBT1ixCHvt_jTGBXW1qA7hXi8qQ-hKBeIYrCb7-BUVg0tM0dSb7m3CiGD_QkQx5sJxc9a4z7vThHvo2c2ZPELPvtd_HBbhRGYT8IhyB-H7hgxeBpLHjI_sxLHp0f_G4&state=2f7c37c712becefcf91eb43076c53bcda6377178fa40b20a" for ::1 at 2016-05-26 11:33:20 +0100
+Processing by Users::OmniauthCallbacksController#failure as HTML
+  Parameters: {"code"=>"AQBVBAA-byWd_qDVf7mtH7WtYSIZoj57o4-70o86IvEljjHRtpJ4wdS_SF_4-nWV683qSlw_-yzGeyTE6fVffNdInc1POJSUFsFEAEx2E_PbRjidyQzWJVQnrzrKCUjhvDWZL9ciTggJyvea1xfJXm1lTFlH6f4IjX6rD-yVz2M-h_S_xwLZ341aHF9zkoenxzgIuBT1ixCHvt_jTGBXW1qA7hXi8qQ-hKBeIYrCb7-BUVg0tM0dSb7m3CiGD_QkQx5sJxc9a4z7vThHvo2c2ZPELPvtd_HBbhRGYT8IhyB-H7hgxeBpLHjI_sxLHp0f_G4", "state"=>"2f7c37c712becefcf91eb43076c53bcda6377178fa40b20a"}
+Redirected to http://localhost:3000/
+Completed 302 Found in 1ms (ActiveRecord: 0.0ms)
+
+
+Started GET "/" for ::1 at 2016-05-26 11:33:21 +0100
+Processing by RestaurantsController#index as HTML
+  [1m[35m (0.3ms)[0m  SELECT COUNT(*) FROM "restaurants"
+  Rendered restaurants/index.html.erb within layouts/application (0.8ms)
+Completed 200 OK in 19ms (Views: 18.5ms | ActiveRecord: 0.3ms)
+
+
+Started GET "/" for ::1 at 2016-05-26 11:33:36 +0100
+Processing by RestaurantsController#index as HTML
+  [1m[36m (0.3ms)[0m  [1mSELECT COUNT(*) FROM "restaurants"[0m
+  Rendered restaurants/index.html.erb within layouts/application (1.1ms)
+Completed 200 OK in 24ms (Views: 22.8ms | ActiveRecord: 0.3ms)
+
+
+Started GET "/assets/restaurants.self-e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855.css?body=1" for ::1 at 2016-05-26 11:33:36 +0100
+
+
+Started GET "/assets/jquery.self-660adc51e0224b731d29f575a6f1ec167ba08ad06ed5deca4f1e8654c135bf4c.js?body=1" for ::1 at 2016-05-26 11:33:36 +0100
+
+
+Started GET "/assets/reviews.self-e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855.css?body=1" for ::1 at 2016-05-26 11:33:36 +0100
+
+
+Started GET "/assets/application.self-e80e8f2318043e8af94dddc2adad5a4f09739a8ebb323b3ab31cd71d45fd9113.css?body=1" for ::1 at 2016-05-26 11:33:36 +0100
+
+
+Started GET "/assets/jquery_ujs.self-e87806d0cf4489aeb1bb7288016024e8de67fd18db693fe026fe3907581e53cd.js?body=1" for ::1 at 2016-05-26 11:33:36 +0100
+
+
+Started GET "/assets/turbolinks.self-c37727e9bd6b2735da5c311aa83fead54ed0be6cc8bd9a65309e9c5abe2cbfff.js?body=1" for ::1 at 2016-05-26 11:33:36 +0100
+
+
+Started GET "/assets/restaurants.self-877aef30ae1b040ab8a3aba4e3e309a11d7f2612f44dde450b5c157aa5f95c05.js?body=1" for ::1 at 2016-05-26 11:33:36 +0100
+
+
+Started GET "/assets/reviews.self-877aef30ae1b040ab8a3aba4e3e309a11d7f2612f44dde450b5c157aa5f95c05.js?body=1" for ::1 at 2016-05-26 11:33:36 +0100
+
+
+Started GET "/assets/application.self-3b8dabdc891efe46b9a144b400ad69e37d7e5876bdc39dee783419a69d7ca819.js?body=1" for ::1 at 2016-05-26 11:33:36 +0100
+
+
+Started GET "/users/auth/facebook" for ::1 at 2016-05-26 11:33:37 +0100
+
+
+Started GET "/users/auth/facebook" for ::1 at 2016-05-26 11:33:38 +0100
+
+
+Started GET "/users/auth/facebook/callback?code=AQBSl96scnDcfgZYpi0X7tHgyNmu3AOJ0kM_iy1_gRa8alZpHuMQBcH40apt9PNkK9qJRgaJxPA1sqBSiqiOp0s8Irh8JHzahg_fKVGsOQL8qhhb78QpNPo2G9YmFPEds2YPvqkeA51eohQ3aSUZYhAVG-mN0T9HBKBiEeHVhBio3zeW-6FgkNacD4_5tv02-GXBITeGGXLCGesFq8hlztOnu8JmnxUoDUkNKBR0ooC4ru0OHJiuqWLJoV6eJw1qT8rGISZNd5pPFckxxF4U_XN1wX9Yn5qVOaUdVDEbFrsBqJPBGD0MzURE8tZpX2I4Elk&state=405efc7cb64dee3992779289f45cf77e2c8bd8d8a9ad8f66" for ::1 at 2016-05-26 11:33:47 +0100
+Processing by Users::OmniauthCallbacksController#failure as HTML
+  Parameters: {"code"=>"AQBSl96scnDcfgZYpi0X7tHgyNmu3AOJ0kM_iy1_gRa8alZpHuMQBcH40apt9PNkK9qJRgaJxPA1sqBSiqiOp0s8Irh8JHzahg_fKVGsOQL8qhhb78QpNPo2G9YmFPEds2YPvqkeA51eohQ3aSUZYhAVG-mN0T9HBKBiEeHVhBio3zeW-6FgkNacD4_5tv02-GXBITeGGXLCGesFq8hlztOnu8JmnxUoDUkNKBR0ooC4ru0OHJiuqWLJoV6eJw1qT8rGISZNd5pPFckxxF4U_XN1wX9Yn5qVOaUdVDEbFrsBqJPBGD0MzURE8tZpX2I4Elk", "state"=>"405efc7cb64dee3992779289f45cf77e2c8bd8d8a9ad8f66"}
+Redirected to http://localhost:3000/
+Completed 302 Found in 1ms (ActiveRecord: 0.0ms)
+
+
+Started GET "/" for ::1 at 2016-05-26 11:33:47 +0100
+Processing by RestaurantsController#index as HTML
+  [1m[35m (0.4ms)[0m  SELECT COUNT(*) FROM "restaurants"
+  Rendered restaurants/index.html.erb within layouts/application (1.2ms)
+Completed 200 OK in 34ms (Views: 33.6ms | ActiveRecord: 0.4ms)
+
+
+Started GET "/users/auth/facebook" for ::1 at 2016-05-26 11:36:13 +0100
+  [1m[36mActiveRecord::SchemaMigration Load (2.3ms)[0m  [1mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+
+
+Started GET "/users/auth/facebook" for ::1 at 2016-05-26 11:36:14 +0100
+
+
+Started GET "/users/auth/facebook/callback?code=AQBLJ4XPxcgWvDf52B3oFOqkmmpuPvZuFGGusawB0epzxllVBSGjVFQQYnGFCSffRgCf9sTOMVbpkU64mYWHf-6MxNHXg-SFSZMp-3iM-Bv9U9Gis-GXk4oomuCUcPZ2qdcNDibUtCZbkNxdIfr9ms6w93it5Y7-SqQxCGeNVLfs9-2oIUUY8N53Tb96Eubnz5oW8pTqIwHat-kfGyvCgsdMQKXOKbG7WIa5aC27RCqHmPdj6pytgGLC_HzbSi6L2WzPxBSmOQnuh1ra5-75EcKq-qznXUNxZDwQO0yXBwjY14qaz5K24UDb-VzAmW5jCjw&state=6b19e75126ba5cef7d98e1807ddad14f5184beaaf62150ee" for ::1 at 2016-05-26 11:36:14 +0100
+Processing by Users::OmniauthCallbacksController#failure as HTML
+  Parameters: {"code"=>"AQBLJ4XPxcgWvDf52B3oFOqkmmpuPvZuFGGusawB0epzxllVBSGjVFQQYnGFCSffRgCf9sTOMVbpkU64mYWHf-6MxNHXg-SFSZMp-3iM-Bv9U9Gis-GXk4oomuCUcPZ2qdcNDibUtCZbkNxdIfr9ms6w93it5Y7-SqQxCGeNVLfs9-2oIUUY8N53Tb96Eubnz5oW8pTqIwHat-kfGyvCgsdMQKXOKbG7WIa5aC27RCqHmPdj6pytgGLC_HzbSi6L2WzPxBSmOQnuh1ra5-75EcKq-qznXUNxZDwQO0yXBwjY14qaz5K24UDb-VzAmW5jCjw", "state"=>"6b19e75126ba5cef7d98e1807ddad14f5184beaaf62150ee"}
+Redirected to http://localhost:3000/
+Completed 302 Found in 2ms (ActiveRecord: 0.0ms)
+
+
+Started GET "/" for ::1 at 2016-05-26 11:36:14 +0100
+Processing by RestaurantsController#index as HTML
+  [1m[35m (0.6ms)[0m  SELECT COUNT(*) FROM "restaurants"
+  Rendered restaurants/index.html.erb within layouts/application (7.6ms)
+Completed 200 OK in 372ms (Views: 364.5ms | ActiveRecord: 2.2ms)
+
+
+Started GET "/" for ::1 at 2016-05-26 11:36:38 +0100
+Processing by RestaurantsController#index as HTML
+  [1m[36m (0.4ms)[0m  [1mSELECT COUNT(*) FROM "restaurants"[0m
+  Rendered restaurants/index.html.erb within layouts/application (1.3ms)
+Completed 200 OK in 25ms (Views: 23.4ms | ActiveRecord: 0.4ms)
+
+
+Started GET "/assets/restaurants.self-e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855.css?body=1" for ::1 at 2016-05-26 11:36:38 +0100
+
+
+Started GET "/assets/jquery.self-660adc51e0224b731d29f575a6f1ec167ba08ad06ed5deca4f1e8654c135bf4c.js?body=1" for ::1 at 2016-05-26 11:36:38 +0100
+
+
+Started GET "/assets/reviews.self-e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855.css?body=1" for ::1 at 2016-05-26 11:36:38 +0100
+
+
+Started GET "/assets/application.self-e80e8f2318043e8af94dddc2adad5a4f09739a8ebb323b3ab31cd71d45fd9113.css?body=1" for ::1 at 2016-05-26 11:36:38 +0100
+
+
+Started GET "/assets/jquery_ujs.self-e87806d0cf4489aeb1bb7288016024e8de67fd18db693fe026fe3907581e53cd.js?body=1" for ::1 at 2016-05-26 11:36:38 +0100
+
+
+Started GET "/assets/turbolinks.self-c37727e9bd6b2735da5c311aa83fead54ed0be6cc8bd9a65309e9c5abe2cbfff.js?body=1" for ::1 at 2016-05-26 11:36:38 +0100
+
+
+Started GET "/assets/restaurants.self-877aef30ae1b040ab8a3aba4e3e309a11d7f2612f44dde450b5c157aa5f95c05.js?body=1" for ::1 at 2016-05-26 11:36:38 +0100
+
+
+Started GET "/assets/reviews.self-877aef30ae1b040ab8a3aba4e3e309a11d7f2612f44dde450b5c157aa5f95c05.js?body=1" for ::1 at 2016-05-26 11:36:38 +0100
+
+
+Started GET "/assets/application.self-3b8dabdc891efe46b9a144b400ad69e37d7e5876bdc39dee783419a69d7ca819.js?body=1" for ::1 at 2016-05-26 11:36:38 +0100
+
+
+Started GET "/users/auth/facebook" for ::1 at 2016-05-26 11:36:40 +0100
+
+
+Started GET "/users/auth/facebook" for ::1 at 2016-05-26 11:36:40 +0100
+
+
+Started GET "/users/auth/facebook/callback?code=AQCbn31XpOqMODqb4Fd6ocElrdTOLXnLljzCMLZIq2lpyPyO67-0qCYteaBUNOu9Iv0eUAb7CmjV7P7X4zLD7Et-MdZhhzWovzL9XckD_4rft5xrQ0worKXayKC3kAwqB8b6YWBQH-WhdNJlCda1f1224sWvb_nXnnZuzF3XJA4i864gxyRCm1AZQZKRiG3LON03rtCck6PCXERPhg8WXZWJYTfpg-pzZWE8ej3gaCP6G5pvy4TUE64oO0rdSKK0ahmDC96Vs_t6ZQitbvrIb8WbtjZuU_pIwvHZ5HxLtItWzon7H7XmauLTIUi4VNnfoqk&state=e34d9f4b62687361744093aedadebd9d4bc8868b615d871f" for ::1 at 2016-05-26 11:36:47 +0100
+Processing by Users::OmniauthCallbacksController#failure as HTML
+  Parameters: {"code"=>"AQCbn31XpOqMODqb4Fd6ocElrdTOLXnLljzCMLZIq2lpyPyO67-0qCYteaBUNOu9Iv0eUAb7CmjV7P7X4zLD7Et-MdZhhzWovzL9XckD_4rft5xrQ0worKXayKC3kAwqB8b6YWBQH-WhdNJlCda1f1224sWvb_nXnnZuzF3XJA4i864gxyRCm1AZQZKRiG3LON03rtCck6PCXERPhg8WXZWJYTfpg-pzZWE8ej3gaCP6G5pvy4TUE64oO0rdSKK0ahmDC96Vs_t6ZQitbvrIb8WbtjZuU_pIwvHZ5HxLtItWzon7H7XmauLTIUi4VNnfoqk", "state"=>"e34d9f4b62687361744093aedadebd9d4bc8868b615d871f"}
+Redirected to http://localhost:3000/
+Completed 302 Found in 1ms (ActiveRecord: 0.0ms)
+
+
+Started GET "/" for ::1 at 2016-05-26 11:36:48 +0100
+Processing by RestaurantsController#index as HTML
+  [1m[35m (0.3ms)[0m  SELECT COUNT(*) FROM "restaurants"
+  Rendered restaurants/index.html.erb within layouts/application (0.9ms)
+Completed 200 OK in 52ms (Views: 50.2ms | ActiveRecord: 0.3ms)
+
+
+Started GET "/restaurants/new" for ::1 at 2016-05-26 11:36:51 +0100
+Processing by RestaurantsController#new as HTML
+  Rendered restaurants/new.html.erb within layouts/application (24.5ms)
+Completed 200 OK in 62ms (Views: 47.3ms | ActiveRecord: 1.9ms)
+
+
+Started GET "/" for ::1 at 2016-05-26 11:41:16 +0100
+  [1m[36mActiveRecord::SchemaMigration Load (0.4ms)[0m  [1mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+Processing by RestaurantsController#index as HTML
+  [1m[35m (0.4ms)[0m  SELECT COUNT(*) FROM "restaurants"
+  Rendered restaurants/index.html.erb within layouts/application (7.3ms)
+Completed 200 OK in 508ms (Views: 484.4ms | ActiveRecord: 1.2ms)
+
+
+Started GET "/" for ::1 at 2016-05-26 11:41:17 +0100
+Processing by RestaurantsController#index as HTML
+  [1m[36m (0.3ms)[0m  [1mSELECT COUNT(*) FROM "restaurants"[0m
+  Rendered restaurants/index.html.erb within layouts/application (1.0ms)
+Completed 200 OK in 42ms (Views: 40.9ms | ActiveRecord: 0.3ms)
+
+
+Started GET "/assets/restaurants.self-e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855.css?body=1" for ::1 at 2016-05-26 11:41:17 +0100
+
+
+Started GET "/assets/reviews.self-e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855.css?body=1" for ::1 at 2016-05-26 11:41:17 +0100
+
+
+Started GET "/assets/jquery.self-660adc51e0224b731d29f575a6f1ec167ba08ad06ed5deca4f1e8654c135bf4c.js?body=1" for ::1 at 2016-05-26 11:41:17 +0100
+
+
+Started GET "/assets/jquery_ujs.self-e87806d0cf4489aeb1bb7288016024e8de67fd18db693fe026fe3907581e53cd.js?body=1" for ::1 at 2016-05-26 11:41:17 +0100
+
+
+Started GET "/assets/application.self-e80e8f2318043e8af94dddc2adad5a4f09739a8ebb323b3ab31cd71d45fd9113.css?body=1" for ::1 at 2016-05-26 11:41:17 +0100
+
+
+Started GET "/assets/turbolinks.self-c37727e9bd6b2735da5c311aa83fead54ed0be6cc8bd9a65309e9c5abe2cbfff.js?body=1" for ::1 at 2016-05-26 11:41:17 +0100
+
+
+Started GET "/assets/reviews.self-877aef30ae1b040ab8a3aba4e3e309a11d7f2612f44dde450b5c157aa5f95c05.js?body=1" for ::1 at 2016-05-26 11:41:18 +0100
+
+
+Started GET "/assets/restaurants.self-877aef30ae1b040ab8a3aba4e3e309a11d7f2612f44dde450b5c157aa5f95c05.js?body=1" for ::1 at 2016-05-26 11:41:18 +0100
+
+
+Started GET "/assets/application.self-3b8dabdc891efe46b9a144b400ad69e37d7e5876bdc39dee783419a69d7ca819.js?body=1" for ::1 at 2016-05-26 11:41:18 +0100
+
+
+Started GET "/users/auth/facebook" for ::1 at 2016-05-26 11:41:19 +0100
+
+
+Started GET "/users/auth/facebook" for ::1 at 2016-05-26 11:41:19 +0100
+
+
+Started GET "/users/auth/facebook/callback?code=AQDfhPsmlNkg0fW8w7NycA47v2V36y4hQqQ9ZEAcPkvdNuhkiadY2ClksA8GuVf2pRvVZ1gr2FpELvikEtWkLrYsBPA3WC7OubDgAw4UYmk2OSlP-BZf4zUieoJKvvxAuYxW0y44k26v6PIU-v9YaXIhg3Xl8jgJmy1cRBZOVnmn7hnpECIs5U7FkILRdVSA360Y0qAGAz9Dj5EKGDI0crPTUslAxSQodWpkfBq62k3hl8LJIMeElAn2H7_UFIXf2tpRBaBO45sAvdMFYS8uh1synyDBDQ4ewKs9_etfyADPSD8MQ3oU0MeKfLIwGOcGRA0&state=2a7407304c46e7b5c4826b3a89064eda2f7b779f581f708a" for ::1 at 2016-05-26 11:41:26 +0100
+Processing by Users::OmniauthCallbacksController#facebook as HTML
+  Parameters: {"code"=>"AQDfhPsmlNkg0fW8w7NycA47v2V36y4hQqQ9ZEAcPkvdNuhkiadY2ClksA8GuVf2pRvVZ1gr2FpELvikEtWkLrYsBPA3WC7OubDgAw4UYmk2OSlP-BZf4zUieoJKvvxAuYxW0y44k26v6PIU-v9YaXIhg3Xl8jgJmy1cRBZOVnmn7hnpECIs5U7FkILRdVSA360Y0qAGAz9Dj5EKGDI0crPTUslAxSQodWpkfBq62k3hl8LJIMeElAn2H7_UFIXf2tpRBaBO45sAvdMFYS8uh1synyDBDQ4ewKs9_etfyADPSD8MQ3oU0MeKfLIwGOcGRA0", "state"=>"2a7407304c46e7b5c4826b3a89064eda2f7b779f581f708a"}
+  [1m[35mUser Load (0.6ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."provider" = $1 AND "users"."uid" = $2  ORDER BY "users"."id" ASC LIMIT 1  [["provider", "facebook"], ["uid", "10209163457420800"]]
+  [1m[36m (0.2ms)[0m  [1mBEGIN[0m
+  [1m[35m (0.2ms)[0m  ROLLBACK
+Redirected to http://localhost:3000/users/sign_up
+Completed 302 Found in 307ms (ActiveRecord: 6.5ms)
+
+
+Started GET "/users/sign_up" for ::1 at 2016-05-26 11:41:27 +0100
+Processing by Devise::RegistrationsController#new as HTML
+  Rendered devise/shared/_links.html.erb (2.2ms)
+  Rendered devise/registrations/new.html.erb within layouts/application (22.8ms)
+Completed 200 OK in 68ms (Views: 66.8ms | ActiveRecord: 0.0ms)
+  [1m[36m (26.1ms)[0m  [1mCREATE TABLE "schema_migrations" ("version" character varying NOT NULL) [0m
+  [1m[35m (1.4ms)[0m  CREATE UNIQUE INDEX  "unique_schema_migrations" ON "schema_migrations"  ("version")
+  [1m[36mActiveRecord::SchemaMigration Load (0.3ms)[0m  [1mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+Migrating to CreateRestaurants (20160524090748)
+  [1m[35m (0.2ms)[0m  BEGIN
+DEPRECATION WARNING: `#timestamps` was called without specifying an option for `null`. In Rails 5, this behavior will change to `null: false`. You should manually specify `null: true` to prevent the behavior of your existing migrations from changing. (called from block in change at /Users/admin/Dropbox/projects/main_course/Week_7/yelp_clone/db/migrate/20160524090748_create_restaurants.rb:7)
+  [1m[36m (5.0ms)[0m  [1mCREATE TABLE "restaurants" ("id" serial primary key, "name" character varying, "rating" integer, "created_at" timestamp, "updated_at" timestamp) [0m
+  [1m[35mSQL (0.4ms)[0m  INSERT INTO "schema_migrations" ("version") VALUES ($1)  [["version", "20160524090748"]]
+  [1m[36m (0.8ms)[0m  [1mCOMMIT[0m
+Migrating to AddDescriptionToRestaurants (20160524115122)
+  [1m[35m (0.3ms)[0m  BEGIN
+  [1m[36m (0.4ms)[0m  [1mALTER TABLE "restaurants" ADD "description" text[0m
+  [1m[35mSQL (0.2ms)[0m  INSERT INTO "schema_migrations" ("version") VALUES ($1)  [["version", "20160524115122"]]
+  [1m[36m (0.4ms)[0m  [1mCOMMIT[0m
+Migrating to CreateReviews (20160524143540)
+  [1m[35m (0.1ms)[0m  BEGIN
+  [1m[36m (4.0ms)[0m  [1mCREATE TABLE "reviews" ("id" serial primary key, "thoughts" text, "rating" integer, "created_at" timestamp NOT NULL, "updated_at" timestamp NOT NULL) [0m
+  [1m[35mSQL (0.3ms)[0m  INSERT INTO "schema_migrations" ("version") VALUES ($1)  [["version", "20160524143540"]]
+  [1m[36m (0.5ms)[0m  [1mCOMMIT[0m
+Migrating to AddRestaurantRefToReviews (20160524144622)
+  [1m[35m (0.3ms)[0m  BEGIN
+  [1m[36m (0.3ms)[0m  [1mALTER TABLE "reviews" ADD "restaurant_id" integer[0m
+  [1m[35m (0.9ms)[0m  CREATE  INDEX  "index_reviews_on_restaurant_id" ON "reviews"  ("restaurant_id")
+  [1m[36m (2.5ms)[0m  [1mALTER TABLE "reviews" ADD CONSTRAINT "fk_rails_8173017a90"
+FOREIGN KEY ("restaurant_id")
+  REFERENCES "restaurants" ("id")
+[0m
+  [1m[35mSQL (0.4ms)[0m  INSERT INTO "schema_migrations" ("version") VALUES ($1)  [["version", "20160524144622"]]
+  [1m[36m (0.6ms)[0m  [1mCOMMIT[0m
+Migrating to DeviseCreateUsers (20160525100021)
+  [1m[35m (0.3ms)[0m  BEGIN
+  [1m[36m (5.6ms)[0m  [1mCREATE TABLE "users" ("id" serial primary key, "email" character varying DEFAULT '' NOT NULL, "encrypted_password" character varying DEFAULT '' NOT NULL, "reset_password_token" character varying, "reset_password_sent_at" timestamp, "remember_created_at" timestamp, "sign_in_count" integer DEFAULT 0 NOT NULL, "current_sign_in_at" timestamp, "last_sign_in_at" timestamp, "current_sign_in_ip" inet, "last_sign_in_ip" inet, "created_at" timestamp NOT NULL, "updated_at" timestamp NOT NULL) [0m
+  [1m[35m (1.2ms)[0m  CREATE UNIQUE INDEX  "index_users_on_email" ON "users"  ("email")
+  [1m[36m (1.3ms)[0m  [1mCREATE UNIQUE INDEX  "index_users_on_reset_password_token" ON "users"  ("reset_password_token")[0m
+  [1m[35mSQL (0.3ms)[0m  INSERT INTO "schema_migrations" ("version") VALUES ($1)  [["version", "20160525100021"]]
+  [1m[36m (0.7ms)[0m  [1mCOMMIT[0m
+Migrating to AddOmniauthToUsers (20160525151647)
+  [1m[35m (0.6ms)[0m  BEGIN
+  [1m[36m (0.6ms)[0m  [1mALTER TABLE "users" ADD "provider" character varying[0m
+  [1m[35m (0.3ms)[0m  ALTER TABLE "users" ADD "uid" character varying
+  [1m[36mSQL (0.6ms)[0m  [1mINSERT INTO "schema_migrations" ("version") VALUES ($1)[0m  [["version", "20160525151647"]]
+  [1m[35m (0.9ms)[0m  COMMIT
+  [1m[36mActiveRecord::SchemaMigration Load (0.7ms)[0m  [1mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+  [1m[35m (15.8ms)[0m  SELECT t2.oid::regclass::text AS to_table, a1.attname AS column, a2.attname AS primary_key, c.conname AS name, c.confupdtype AS on_update, c.confdeltype AS on_delete
+FROM pg_constraint c
+JOIN pg_class t1 ON c.conrelid = t1.oid
+JOIN pg_class t2 ON c.confrelid = t2.oid
+JOIN pg_attribute a1 ON a1.attnum = c.conkey[1] AND a1.attrelid = t1.oid
+JOIN pg_attribute a2 ON a2.attnum = c.confkey[1] AND a2.attrelid = t2.oid
+JOIN pg_namespace t3 ON c.connamespace = t3.oid
+WHERE c.contype = 'f'
+  AND t1.relname = 'restaurants'
+  AND t3.nspname = ANY (current_schemas(false))
+ORDER BY c.conname
+
+  [1m[36m (3.0ms)[0m  [1mSELECT t2.oid::regclass::text AS to_table, a1.attname AS column, a2.attname AS primary_key, c.conname AS name, c.confupdtype AS on_update, c.confdeltype AS on_delete
+FROM pg_constraint c
+JOIN pg_class t1 ON c.conrelid = t1.oid
+JOIN pg_class t2 ON c.confrelid = t2.oid
+JOIN pg_attribute a1 ON a1.attnum = c.conkey[1] AND a1.attrelid = t1.oid
+JOIN pg_attribute a2 ON a2.attnum = c.confkey[1] AND a2.attrelid = t2.oid
+JOIN pg_namespace t3 ON c.connamespace = t3.oid
+WHERE c.contype = 'f'
+  AND t1.relname = 'reviews'
+  AND t3.nspname = ANY (current_schemas(false))
+ORDER BY c.conname
+[0m
+  [1m[35m (4.5ms)[0m  SELECT t2.oid::regclass::text AS to_table, a1.attname AS column, a2.attname AS primary_key, c.conname AS name, c.confupdtype AS on_update, c.confdeltype AS on_delete
+FROM pg_constraint c
+JOIN pg_class t1 ON c.conrelid = t1.oid
+JOIN pg_class t2 ON c.confrelid = t2.oid
+JOIN pg_attribute a1 ON a1.attnum = c.conkey[1] AND a1.attrelid = t1.oid
+JOIN pg_attribute a2 ON a2.attnum = c.confkey[1] AND a2.attrelid = t2.oid
+JOIN pg_namespace t3 ON c.connamespace = t3.oid
+WHERE c.contype = 'f'
+  AND t1.relname = 'users'
+  AND t3.nspname = ANY (current_schemas(false))
+ORDER BY c.conname
+
+
+
+Started GET "/" for ::1 at 2016-05-26 11:46:36 +0100
+  [1m[36mActiveRecord::SchemaMigration Load (0.8ms)[0m  [1mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+Processing by RestaurantsController#index as HTML
+  [1m[35m (0.6ms)[0m  SELECT COUNT(*) FROM "restaurants"
+  Rendered restaurants/index.html.erb within layouts/application (14.5ms)
+Completed 200 OK in 497ms (Views: 476.6ms | ActiveRecord: 2.9ms)
+
+
+Started GET "/" for ::1 at 2016-05-26 11:46:36 +0100
+Processing by RestaurantsController#index as HTML
+  [1m[36m (0.7ms)[0m  [1mSELECT COUNT(*) FROM "restaurants"[0m
+  Rendered restaurants/index.html.erb within layouts/application (1.8ms)
+Completed 200 OK in 90ms (Views: 88.3ms | ActiveRecord: 0.7ms)
+
+
+Started GET "/assets/restaurants.self-e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855.css?body=1" for ::1 at 2016-05-26 11:46:37 +0100
+
+
+Started GET "/assets/reviews.self-e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855.css?body=1" for ::1 at 2016-05-26 11:46:37 +0100
+
+
+Started GET "/assets/jquery_ujs.self-e87806d0cf4489aeb1bb7288016024e8de67fd18db693fe026fe3907581e53cd.js?body=1" for ::1 at 2016-05-26 11:46:37 +0100
+
+
+Started GET "/assets/application.self-e80e8f2318043e8af94dddc2adad5a4f09739a8ebb323b3ab31cd71d45fd9113.css?body=1" for ::1 at 2016-05-26 11:46:37 +0100
+
+
+Started GET "/assets/jquery.self-660adc51e0224b731d29f575a6f1ec167ba08ad06ed5deca4f1e8654c135bf4c.js?body=1" for ::1 at 2016-05-26 11:46:37 +0100
+
+
+Started GET "/assets/turbolinks.self-c37727e9bd6b2735da5c311aa83fead54ed0be6cc8bd9a65309e9c5abe2cbfff.js?body=1" for ::1 at 2016-05-26 11:46:37 +0100
+
+
+Started GET "/assets/restaurants.self-877aef30ae1b040ab8a3aba4e3e309a11d7f2612f44dde450b5c157aa5f95c05.js?body=1" for ::1 at 2016-05-26 11:46:37 +0100
+
+
+Started GET "/assets/reviews.self-877aef30ae1b040ab8a3aba4e3e309a11d7f2612f44dde450b5c157aa5f95c05.js?body=1" for ::1 at 2016-05-26 11:46:37 +0100
+
+
+Started GET "/assets/application.self-3b8dabdc891efe46b9a144b400ad69e37d7e5876bdc39dee783419a69d7ca819.js?body=1" for ::1 at 2016-05-26 11:46:37 +0100
+
+
+Started GET "/users/auth/facebook" for ::1 at 2016-05-26 11:46:38 +0100
+
+
+Started GET "/users/auth/facebook" for ::1 at 2016-05-26 11:46:38 +0100
+
+
+Started GET "/users/auth/facebook/callback?code=AQAjoBnRWjHwfY8oEroLlGoHbXN71zzChLJllz0S-TdPw62_l1wrVYBRpIE7f8S2p1HxtUCkJu1hvg_dIf80GpvLcVVPi4jvLAd0cofO36X10X-zgdnE-XI6UUBZaWqiW6-BxGtwHp6XRFu6pgSLzn4-fqhLXvuCvh3Y3ohED_Hzk4rN9wr6OK_bRh8zP9V469mwFfIu3dcpuSwVX07pzqKJPE2Wq4fSK0VwbcLn_OGKDzAQsTeBlmVNXYIIzaxsCtOvH94m1vHBy2Up8rT7rnPEWDnhMzxJAAxYCT7lAyI6frVTt8ttc1igzjrgcsadVvE&state=6fa93fd1d031d49409b9013aca6fdcd78eeca4ada3918614" for ::1 at 2016-05-26 11:47:00 +0100
+Processing by Users::OmniauthCallbacksController#facebook as HTML
+  Parameters: {"code"=>"AQAjoBnRWjHwfY8oEroLlGoHbXN71zzChLJllz0S-TdPw62_l1wrVYBRpIE7f8S2p1HxtUCkJu1hvg_dIf80GpvLcVVPi4jvLAd0cofO36X10X-zgdnE-XI6UUBZaWqiW6-BxGtwHp6XRFu6pgSLzn4-fqhLXvuCvh3Y3ohED_Hzk4rN9wr6OK_bRh8zP9V469mwFfIu3dcpuSwVX07pzqKJPE2Wq4fSK0VwbcLn_OGKDzAQsTeBlmVNXYIIzaxsCtOvH94m1vHBy2Up8rT7rnPEWDnhMzxJAAxYCT7lAyI6frVTt8ttc1igzjrgcsadVvE", "state"=>"6fa93fd1d031d49409b9013aca6fdcd78eeca4ada3918614"}
+  [1m[35mUser Load (0.9ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."provider" = $1 AND "users"."uid" = $2  ORDER BY "users"."id" ASC LIMIT 1  [["provider", "facebook"], ["uid", "10209163457420800"]]
+  [1m[36m (0.9ms)[0m  [1mBEGIN[0m
+  [1m[35m (1.7ms)[0m  ROLLBACK
+Redirected to http://localhost:3000/users/sign_up
+Completed 302 Found in 290ms (ActiveRecord: 10.0ms)
+
+
+Started GET "/users/sign_up" for ::1 at 2016-05-26 11:47:01 +0100
+Processing by Devise::RegistrationsController#new as HTML
+  Rendered devise/shared/_links.html.erb (1.6ms)
+  Rendered devise/registrations/new.html.erb within layouts/application (36.3ms)
+Completed 200 OK in 90ms (Views: 88.2ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/" for ::1 at 2016-05-26 11:53:34 +0100
+  [1m[36mActiveRecord::SchemaMigration Load (2.0ms)[0m  [1mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+Processing by RestaurantsController#index as HTML
+  [1m[35m (0.4ms)[0m  SELECT COUNT(*) FROM "restaurants"
+  Rendered restaurants/index.html.erb within layouts/application (4.8ms)
+Completed 200 OK in 498ms (Views: 470.5ms | ActiveRecord: 1.4ms)
+
+
+Started GET "/" for ::1 at 2016-05-26 11:53:34 +0100
+Processing by RestaurantsController#index as HTML
+  [1m[36m (0.6ms)[0m  [1mSELECT COUNT(*) FROM "restaurants"[0m
+  Rendered restaurants/index.html.erb within layouts/application (1.5ms)
+Completed 200 OK in 43ms (Views: 42.0ms | ActiveRecord: 0.6ms)
+
+
+Started GET "/assets/restaurants.self-e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855.css?body=1" for ::1 at 2016-05-26 11:53:34 +0100
+
+
+Started GET "/assets/reviews.self-e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855.css?body=1" for ::1 at 2016-05-26 11:53:34 +0100
+
+
+Started GET "/assets/application.self-e80e8f2318043e8af94dddc2adad5a4f09739a8ebb323b3ab31cd71d45fd9113.css?body=1" for ::1 at 2016-05-26 11:53:34 +0100
+
+
+Started GET "/assets/turbolinks.self-c37727e9bd6b2735da5c311aa83fead54ed0be6cc8bd9a65309e9c5abe2cbfff.js?body=1" for ::1 at 2016-05-26 11:53:34 +0100
+
+
+Started GET "/assets/jquery.self-660adc51e0224b731d29f575a6f1ec167ba08ad06ed5deca4f1e8654c135bf4c.js?body=1" for ::1 at 2016-05-26 11:53:34 +0100
+
+
+Started GET "/assets/jquery_ujs.self-e87806d0cf4489aeb1bb7288016024e8de67fd18db693fe026fe3907581e53cd.js?body=1" for ::1 at 2016-05-26 11:53:34 +0100
+
+
+Started GET "/assets/restaurants.self-877aef30ae1b040ab8a3aba4e3e309a11d7f2612f44dde450b5c157aa5f95c05.js?body=1" for ::1 at 2016-05-26 11:53:34 +0100
+
+
+Started GET "/assets/reviews.self-877aef30ae1b040ab8a3aba4e3e309a11d7f2612f44dde450b5c157aa5f95c05.js?body=1" for ::1 at 2016-05-26 11:53:34 +0100
+
+
+Started GET "/assets/application.self-3b8dabdc891efe46b9a144b400ad69e37d7e5876bdc39dee783419a69d7ca819.js?body=1" for ::1 at 2016-05-26 11:53:34 +0100
+
+
+Started GET "/users/auth/facebook" for ::1 at 2016-05-26 11:53:38 +0100
+
+
+Started GET "/users/auth/facebook" for ::1 at 2016-05-26 11:53:38 +0100
+
+
+Started GET "/users/auth/facebook/callback?code=AQAakReTwjjFEPQlo8Dy__XDQBtmsbDo_DXgTbUFRtzhIf1HWGrk0YtkKZNQtVAO38tps9czHf9wUV-crtv8LExX7_vDFPPNourZ8sZGR2NkUw-rPSU2VVukeFS6eNyNQ6CkTomM-raVHxaCmjjHPLT6lBiFQ0DEERk-UIpfTqvkwf_AOLJL9J9ePdbxjeThcua-5EsZ-5G_g4Oek1nmi0cEUICDZPtXSqi85NyDdsAiOEU0YhfBAx5FA6nBSlKTH_inTbObwNP3knbDx5obgZ7ygsHdPND_Pwy5dt4RFle7qJrsx45ImH9axYLYj0yB-MAMn9UiLAKbueqLiE4c8-oQ96jnJIwKybuvGSMuMFmBgQ&state=10ac0cff3036f49f691b90d1937ad4b18b6497d6aca7f929" for ::1 at 2016-05-26 11:53:45 +0100
+Processing by Users::OmniauthCallbacksController#facebook as HTML
+  Parameters: {"code"=>"AQAakReTwjjFEPQlo8Dy__XDQBtmsbDo_DXgTbUFRtzhIf1HWGrk0YtkKZNQtVAO38tps9czHf9wUV-crtv8LExX7_vDFPPNourZ8sZGR2NkUw-rPSU2VVukeFS6eNyNQ6CkTomM-raVHxaCmjjHPLT6lBiFQ0DEERk-UIpfTqvkwf_AOLJL9J9ePdbxjeThcua-5EsZ-5G_g4Oek1nmi0cEUICDZPtXSqi85NyDdsAiOEU0YhfBAx5FA6nBSlKTH_inTbObwNP3knbDx5obgZ7ygsHdPND_Pwy5dt4RFle7qJrsx45ImH9axYLYj0yB-MAMn9UiLAKbueqLiE4c8-oQ96jnJIwKybuvGSMuMFmBgQ", "state"=>"10ac0cff3036f49f691b90d1937ad4b18b6497d6aca7f929"}
+  [1m[35mUser Load (0.6ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."provider" = $1 AND "users"."uid" = $2  ORDER BY "users"."id" ASC LIMIT 1  [["provider", "facebook"], ["uid", "10209163457420800"]]
+  [1m[36m (0.2ms)[0m  [1mBEGIN[0m
+  [1m[35m (0.2ms)[0m  ROLLBACK
+Redirected to http://localhost:3000/users/sign_up
+Completed 302 Found in 231ms (ActiveRecord: 4.6ms)
+
+
+Started GET "/users/sign_up" for ::1 at 2016-05-26 11:53:46 +0100
+Processing by Devise::RegistrationsController#new as HTML
+  Rendered devise/shared/_links.html.erb (1.9ms)
+  Rendered devise/registrations/new.html.erb within layouts/application (32.5ms)
+Completed 200 OK in 65ms (Views: 64.0ms | ActiveRecord: 0.0ms)
+
+
+Started POST "/users" for ::1 at 2016-05-26 11:54:06 +0100
+Processing by Devise::RegistrationsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"9uj03TBXqSM1GNt4WoSM2CcEZaDqoy6ZGq+SUBaonRwk+YSkIlLZmxpGHK1muVYBJpXz55/XxFKujEUxiJdcQQ==", "user"=>{"email"=>"chris@hotmail.com", "password"=>"[FILTERED]", "password_confirmation"=>"[FILTERED]"}, "commit"=>"Sign up"}
+  [1m[36m (4.5ms)[0m  [1mBEGIN[0m
+  [1m[35mUser Exists (0.4ms)[0m  SELECT  1 AS one FROM "users" WHERE "users"."email" = 'chris@hotmail.com' LIMIT 1
+  [1m[36mSQL (0.6ms)[0m  [1mINSERT INTO "users" ("email", "encrypted_password", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "id"[0m  [["email", "chris@hotmail.com"], ["encrypted_password", "$2a$11$xt8Aw2Xr/6OnfveO2Yp1sOCJ/0B3bzXuaEVvZpY/krFGkjg1HUjkK"], ["created_at", "2016-05-26 10:54:07.002868"], ["updated_at", "2016-05-26 10:54:07.002868"]]
+  [1m[35m (0.5ms)[0m  COMMIT
+  [1m[36m (0.2ms)[0m  [1mBEGIN[0m
+  [1m[35mSQL (0.3ms)[0m  UPDATE "users" SET "last_sign_in_at" = $1, "current_sign_in_at" = $2, "last_sign_in_ip" = $3, "current_sign_in_ip" = $4, "sign_in_count" = $5, "updated_at" = $6 WHERE "users"."id" = $7  [["last_sign_in_at", "2016-05-26 10:54:07.006996"], ["current_sign_in_at", "2016-05-26 10:54:07.006996"], ["last_sign_in_ip", "::1/128"], ["current_sign_in_ip", "::1/128"], ["sign_in_count", 1], ["updated_at", "2016-05-26 10:54:07.008106"], ["id", 1]]
+  [1m[36m (0.4ms)[0m  [1mCOMMIT[0m
+Redirected to http://localhost:3000/
+Completed 302 Found in 218ms (ActiveRecord: 6.9ms)
+
+
+Started GET "/" for ::1 at 2016-05-26 11:54:07 +0100
+Processing by RestaurantsController#index as HTML
+  [1m[35m (0.3ms)[0m  SELECT COUNT(*) FROM "restaurants"
+  Rendered restaurants/index.html.erb within layouts/application (1.2ms)
+  [1m[36mUser Load (10.5ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."id" = $1  ORDER BY "users"."id" ASC LIMIT 1[0m  [["id", 1]]
+Completed 200 OK in 40ms (Views: 28.2ms | ActiveRecord: 10.8ms)
+
+
+Started GET "/restaurants/new" for ::1 at 2016-05-26 11:54:14 +0100
+Processing by RestaurantsController#new as HTML
+  Rendered restaurants/new.html.erb within layouts/application (4.3ms)
+  [1m[35mUser Load (0.6ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."id" = $1  ORDER BY "users"."id" ASC LIMIT 1  [["id", 1]]
+Completed 200 OK in 38ms (Views: 31.8ms | ActiveRecord: 1.1ms)
+
+
+Started POST "/restaurants" for ::1 at 2016-05-26 11:54:21 +0100
+Processing by RestaurantsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"urwYF5gOwHOW/9/oUyou13x+f75qN1RaDXLUaPiMaXtorWhuiguwy7mhGD1vF/QOfe/p+R9DvpG5UQMJZrOoJg==", "restaurant"=>{"name"=>"KFC", "description"=>"Very nice"}, "commit"=>"Create Restaurant"}
+  [1m[36m (0.2ms)[0m  [1mBEGIN[0m
+  [1m[35mRestaurant Exists (0.3ms)[0m  SELECT  1 AS one FROM "restaurants" WHERE "restaurants"."name" = 'KFC' LIMIT 1
+  [1m[36mSQL (0.4ms)[0m  [1mINSERT INTO "restaurants" ("name", "description", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "id"[0m  [["name", "KFC"], ["description", "Very nice"], ["created_at", "2016-05-26 10:54:21.079788"], ["updated_at", "2016-05-26 10:54:21.079788"]]
+  [1m[35m (0.5ms)[0m  COMMIT
+Redirected to http://localhost:3000/restaurants
+Completed 302 Found in 6ms (ActiveRecord: 1.4ms)
+
+
+Started GET "/restaurants" for ::1 at 2016-05-26 11:54:21 +0100
+Processing by RestaurantsController#index as HTML
+  [1m[36m (0.3ms)[0m  [1mSELECT COUNT(*) FROM "restaurants"[0m
+  [1m[35mRestaurant Load (0.4ms)[0m  SELECT "restaurants".* FROM "restaurants"
+  [1m[36mReview Load (0.4ms)[0m  [1mSELECT "reviews".* FROM "reviews" WHERE "reviews"."restaurant_id" = $1[0m  [["restaurant_id", 1]]
+  Rendered restaurants/index.html.erb within layouts/application (36.4ms)
+  [1m[35mUser Load (0.4ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."id" = $1  ORDER BY "users"."id" ASC LIMIT 1  [["id", 1]]
+Completed 200 OK in 66ms (Views: 60.8ms | ActiveRecord: 4.3ms)
+
+
+Started GET "/restaurants/1/reviews/new" for ::1 at 2016-05-26 11:54:23 +0100
+Processing by ReviewsController#new as HTML
+  Parameters: {"restaurant_id"=>"1"}
+  [1m[36mRestaurant Load (0.3ms)[0m  [1mSELECT  "restaurants".* FROM "restaurants" WHERE "restaurants"."id" = $1 LIMIT 1[0m  [["id", 1]]
+  Rendered reviews/new.html.erb within layouts/application (7.2ms)
+  [1m[35mUser Load (0.5ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."id" = $1  ORDER BY "users"."id" ASC LIMIT 1  [["id", 1]]
+Completed 200 OK in 49ms (Views: 39.9ms | ActiveRecord: 1.4ms)
+
+
+Started POST "/restaurants/1/reviews" for ::1 at 2016-05-26 11:54:27 +0100
+Processing by ReviewsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"mThTcdY/jrefKgWpENjw6cFdZqbWrMaRrHKg1NAHidtLKSMIxDr+D7B0wnws5SowwMzw4aPYLFoYUXe1TjhIhg==", "review"=>{"thoughts"=>"Not so nice", "rating"=>"1"}, "commit"=>"Leave Review", "restaurant_id"=>"1"}
+  [1m[36mRestaurant Load (0.4ms)[0m  [1mSELECT  "restaurants".* FROM "restaurants" WHERE "restaurants"."id" = $1 LIMIT 1[0m  [["id", 1]]
+  [1m[35m (0.3ms)[0m  BEGIN
+  [1m[36mSQL (0.6ms)[0m  [1mINSERT INTO "reviews" ("thoughts", "rating", "restaurant_id", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5) RETURNING "id"[0m  [["thoughts", "Not so nice"], ["rating", 1], ["restaurant_id", 1], ["created_at", "2016-05-26 10:54:27.786340"], ["updated_at", "2016-05-26 10:54:27.786340"]]
+  [1m[35m (0.5ms)[0m  COMMIT
+Redirected to http://localhost:3000/restaurants
+Completed 302 Found in 14ms (ActiveRecord: 1.8ms)
+
+
+Started GET "/restaurants" for ::1 at 2016-05-26 11:54:27 +0100
+Processing by RestaurantsController#index as HTML
+  [1m[36m (0.4ms)[0m  [1mSELECT COUNT(*) FROM "restaurants"[0m
+  [1m[35mRestaurant Load (0.3ms)[0m  SELECT "restaurants".* FROM "restaurants"
+  [1m[36mReview Load (2.2ms)[0m  [1mSELECT "reviews".* FROM "reviews" WHERE "reviews"."restaurant_id" = $1[0m  [["restaurant_id", 1]]
+  Rendered restaurants/index.html.erb within layouts/application (8.9ms)
+  [1m[35mUser Load (0.5ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."id" = $1  ORDER BY "users"."id" ASC LIMIT 1  [["id", 1]]
+Completed 200 OK in 89ms (Views: 85.2ms | ActiveRecord: 3.3ms)
+
+
+Started DELETE "/users/sign_out" for ::1 at 2016-05-26 11:54:33 +0100
+Processing by Devise::SessionsController#destroy as HTML
+  Parameters: {"authenticity_token"=>"7syWw4vCB2dpAuCU2dX9Vwtl8aYUpOm6xcnOwIIp08A83ea6mcd330ZcJ0Hl6CeOCvRn4WHQA3Fx6hmhHBYSnQ=="}
+  [1m[36mUser Load (0.4ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."id" = $1  ORDER BY "users"."id" ASC LIMIT 1[0m  [["id", 1]]
+  [1m[35m (0.2ms)[0m  BEGIN
+  [1m[36m (0.1ms)[0m  [1mCOMMIT[0m
+Redirected to http://localhost:3000/
+Completed 302 Found in 21ms (ActiveRecord: 0.7ms)
+
+
+Started GET "/" for ::1 at 2016-05-26 11:54:33 +0100
+Processing by RestaurantsController#index as HTML
+  [1m[35m (0.3ms)[0m  SELECT COUNT(*) FROM "restaurants"
+  [1m[36mRestaurant Load (0.2ms)[0m  [1mSELECT "restaurants".* FROM "restaurants"[0m
+  [1m[35mReview Load (0.3ms)[0m  SELECT "reviews".* FROM "reviews" WHERE "reviews"."restaurant_id" = $1  [["restaurant_id", 1]]
+  Rendered restaurants/index.html.erb within layouts/application (3.3ms)
+Completed 200 OK in 39ms (Views: 37.3ms | ActiveRecord: 0.8ms)

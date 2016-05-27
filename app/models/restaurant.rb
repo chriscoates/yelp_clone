@@ -2,7 +2,7 @@ class Restaurant < ActiveRecord::Base
 
   has_attached_file :image, :styles => { :medium => "300x300>", :thumb => "100x100>" }, :default_url => "/images/:style/missing.png"
   validates_attachment_content_type :image, :content_type => /\Aimage\/.*\Z/
-  
+
   belongs_to :user
   has_many :reviews,
     -> { extending WithUserAssociationExtension },
@@ -10,5 +10,9 @@ class Restaurant < ActiveRecord::Base
 
 
   validates :name, length: { minimum: 3 }, uniqueness: true
+
+  def has_created?(current_user)
+    self.user_id == current_user.id
+  end
 
 end

@@ -35,6 +35,8 @@ feature "User can sign in and out" do
 
     it "should not allow a user to submit multiple reveiws to a restaurant" do
       create_restaurant
+      click_link 'Sign out'
+      sign_up_test(email:'robin@example.com')
       leave_review
       leave_review
       expect(page).to have_content("has reviewed this restaurant already")

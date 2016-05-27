@@ -71,9 +71,10 @@ feature 'restaurants' do
 
     context 'editing restaurants' do
 
-    before { Restaurant.create name: 'KFC', description: 'Deep fried goodness' }
+
 
       scenario 'let a user edit a restaurant' do
+       create_restaurant
        visit '/restaurants'
        click_link 'Edit KFC'
        fill_in 'Name', with: 'Kentucky Fried Chicken'
@@ -88,9 +89,10 @@ feature 'restaurants' do
 
     context 'deleting restaurants' do
 
-      before { Restaurant.create name: 'KFC', description: 'Deep fried goodness' }
+
 
       scenario 'removes a restaurant when a user clicks a delete link' do
+        create_restaurant
         visit '/restaurants'
         click_link 'Delete KFC'
         expect(page).not_to have_content 'KFC'

@@ -1,0 +1,27 @@
+<% if @restaurants.any? %>
+  <% @restaurants.each do |restaurant| %>
+    <h2>
+      <%= link_to restaurant.name, restaurant_path(restaurant) %>
+    </h2>
+    <%= image_tag restaurant.image.url(:thumb) %>
+    <h5>
+      <%= restaurant.description %>
+    </h5>
+    <% if current_user %>
+      <% if restaurant.has_created?(current_user) %>
+        <%= link_to "Edit #{restaurant.name}", edit_restaurant_path(restaurant) %>
+        <%= link_to "Delete #{restaurant.name}", restaurant_path(restaurant), method: :delete %>
+      <% else %>
+        <%= link_to "Review #{restaurant.name}", new_restaurant_review_path(restaurant) %>
+      <% end %>
+    <% end %>
+    <% restaurant.reviews.each do |review| %>
+      <h5>
+        <%= review.thoughts %>
+      </h5>
+    <% end %>
+  <% end %>
+<% else %>
+  <h1>No restaurants yet!</h1>
+<% end %>
+<a href='/restaurants/new'> Add a restaurant</a>
